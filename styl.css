@@ -1,0 +1,77 @@
+html {
+    background-color: #F1FAEE;
+    color: #1D3557;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Golos Text', sans-serif;
+}
+
+.icon {
+    border-radius: 20%;
+    padding: 8px;
+    max-width: 65px;
+    max-height: auto;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.icon:hover {
+    background-color: #457B9D;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items:center;
+    background-color: #1D3557;
+    padding: 30px;
+    
+}
+
+.content {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.logo {
+    color: white;
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+    padding: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    font-style: italic;
+    line-height: 0px;
+}
+
+.links {
+    margin-left: auto;
+}
+
+.info {
+    margin-right: auto;
+}
+
+.item {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #457B9D;
+    padding: 25px;
+    border-radius: 5px;
+    color: #F1FAEE;
+    margin-right: 30px;
+}
+
+.item:hover {
+    background-color: #A8DADC;
+    color:#1D3557;
+}
+
+.content.contentItem {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
