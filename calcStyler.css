@@ -1,0 +1,39 @@
+.calcBody {
+    background-color: #457b9d;
+}
+
+.inputButtons {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    border-radius: 15%;
+}
+
+.button {
+    border-radius: 20%;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.button1 {
+background-color: #efefef;
+padding: 15px 15px;
+color: #a8dadc;
+} /* Green */
+
+.button1:hover {
+background-color: #000000;
+color: f1faee;
+}
+
+.nums {
+padding: 15px 15px;
+background-color: #000000;
+color: white;
+}
+
+.nums:hover {
+background-color: #ffffff;
+color: black;
+}

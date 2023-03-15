@@ -47,6 +47,10 @@ body {
     line-height: 0px;
 }
 
+.logo:hover {
+    cursor: grab;
+}
+
 .links {
     margin-left: auto;
 }
