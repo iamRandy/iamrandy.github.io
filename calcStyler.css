@@ -1,5 +1,6 @@
 .calcBody {
     background-color: #457b9d;
+    margin: 20px;
 }
 
 .inputButtons {
@@ -7,10 +8,12 @@
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(4,1fr);
     border-radius: 15%;
+    margin: 5px;
 }
 
 .button {
     border-radius: 20%;
+    text-decoration: none;
     background-color: black;
     color: white;
     font-size: 20px;
