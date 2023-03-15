@@ -36,49 +36,73 @@
         background-color: #ffffff;
         color: black;
       }
-      
     </style>
 
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap" rel="stylesheet">
+    <title>RandyCalculator</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
   </head>
-  <body style="background-color: #223052; color: white">
-  <strong>Simple Calculator</strong>
+  <body>
+    <div class="top">
+      
+      <div class="info">
+        <a class="item" href="#">About</a>
+        <a class="item" href="#">Contact</a>
+      </div>
 
-  <p id = "calculation">Input: </p>
+      <div class="logo">
+        <h2>RANDY</h2>
+      </div>
 
-  <strong> <p style="background-color: black; padding: 10px 10px;" id = "output">- - -</p> </strong>
+      <div class="links">
+        <img class="icon" src = "imgs/linkedinlogo.png">
+        <img class="icon" src = "imgs/gitlogo.png">
+      </div>
 
-<br>
+    </div>
+    <strong>Simple Calculator</strong>
 
-  <button onclick="inputNumber(7)" class = "button nums">7</button>
-  <button onclick="inputNumber(8)" class = "button nums">8</button>
-  <button onclick="inputNumber(9)" class = "button nums">9</button>
-  <button onclick="inputNumber('*')" class = "button nums">X</button>
+    <p id = "calculation">Input: </p>
 
-<br>
+    <strong> <p style="background-color: black; padding: 10px 10px;" id = "output">- - -</p> </strong>
 
-  <button onclick="inputNumber(4)" class = "button nums">4</button>
-  <button onclick="inputNumber(5)" class = "button nums">5</button>
-  <button onclick="inputNumber(6)" class = "button nums">6</button>
-  <button onclick="inputNumber('-')" class = "button nums">--</button>
+    <br>
 
-<br>
-    
-  <button onclick="inputNumber(1)" class = "button nums">1</button>
-  <button onclick="inputNumber(2)" class = "button nums">2</button>
-  <button onclick="inputNumber(3)" class = "button nums">3</button>
-  <button onclick="inputNumber('+')" class = "button nums">+</button>
+    <button onclick="inputNumber(7)" class = "button nums">7</button>
+    <button onclick="inputNumber(8)" class = "button nums">8</button>
+    <button onclick="inputNumber(9)" class = "button nums">9</button>
+    <button onclick="inputNumber('*')" class = "button nums">X</button>
 
-<br>
+    <br>
 
-  <button onclick="inputNumber(0)" class = "button nums">0</button>
+    <button onclick="inputNumber(4)" class = "button nums">4</button>
+    <button onclick="inputNumber(5)" class = "button nums">5</button>
+    <button onclick="inputNumber(6)" class = "button nums">6</button>
+    <button onclick="inputNumber('-')" class = "button nums">--</button>
 
-  <button onclick="inputNumber('c')" class = "button nums">C</button>
+    <br>
+      
+    <button onclick="inputNumber(1)" class = "button nums">1</button>
+    <button onclick="inputNumber(2)" class = "button nums">2</button>
+    <button onclick="inputNumber(3)" class = "button nums">3</button>
+    <button onclick="inputNumber('+')" class = "button nums">+</button>
 
-  <button onclick="calculate()" class="button button1">=</button>
-  <button onclick="inputNumber('/')" class = "button nums">/</button>
+    <br>
+
+    <button onclick="inputNumber(0)" class = "button nums">0</button>
+
+    <button onclick="inputNumber('c')" class = "button nums">C</button>
+
+    <button onclick="calculate()" class="button button1">=</button>
+    <button onclick="inputNumber('/')" class = "button nums">/</button>
 
   <script>
 
