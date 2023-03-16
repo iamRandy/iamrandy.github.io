@@ -1,6 +1,10 @@
 .calcBody {
     background-color: #457b9d;
-    margin: 20px;
+    margin-top: 10px;
+    margin-right: 30%;
+    margin-left: 30%;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .inputButtons {
@@ -17,6 +21,8 @@
     background-color: black;
     color: white;
     font-size: 20px;
+    border: none;
+    margin: 3px;
 }
 
 .button1 {
