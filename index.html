@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <link rel="stylesheet" href="styl.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,27 +21,105 @@
       </div>
 
       <div class="logo">
-        <h2 href="index.html" style="text-decoration: none;">RANDY</h2>
+        <h2><a href="index.html" style="color: white; text-decoration: none;">RANDY</a></h2>
       </div>
 
       <div class="links">
-        <img class="icon" src = "imgs/linkedinlogo.png">
-        <img class="icon" src = "imgs/gitlogo.png">
+        <button id = "linkedInIconButton" class = "iconButton">
+          <img class="icon" src = "imgs/linkedinlogo.png">
+        </button>
+        <button id = "gitIconButton" class = "iconButton">
+          <img class="icon" src = "imgs/gitlogo.png">
+        </button>
       </div>
 
     </div>
-    <div class="content">
-     <h2> Hi, welcome to my website!
-      <br>My name is Randy Thai and here are some things that I've made.</h2>
+    <div class="introduction">
+      <h2> Hi, welcome to my Portfolio!
+      <br>My name is Randy Thai and here are some highlights of the things that I've made.</h2>
+      <div class = "showcase">
+
+      </div>
+    </div>
+
+    <!---->
+
+    <div id = "Remora" class = "content">
+
+      <div class = "innerContentText">
+        <h1 class = "contentTitle">Remora<br></h1>
+        <h4 class = "subTitle">&#40;The Hydration App&#41;</h4>
+        <p class = "innerText">
+          This project was created as an applicant for the HackIllinois 2022
+          competition hosted by University of Illinois where the goal was to
+          create anything can be used to aid to a modern day problem. My group
+          decided to create a water reminder app that reminds you to drink
+          water on a regular and healthy basis based on your weight and height.
+          The only difference with our app, is that we decided to give a fun and
+          interactive way to drink water to incentivize it by putting it into
+          augmented reality and right in front of the viewers faces!
+        </p>
+
+      </div>
       
-      <div class="contentItem">
-
-        <a class="innerContent" href="calc.html">Calculator</a>
-        <a class="innerContent" href="pacman/pacman.html">Pacman</a>
-
+      <div class = "imageContainer">
+        <img src = "imgs\remoraView.png">
       </div>
 
     </div>
+
+    <!---->
+
+    <div id = "PTP" class = "content">
+
+      <div class = "innerContentText">
+        <h1 class = "contentTitle">Protect The Park<br></h1>
+        <h4 class = "subTitle">&#40;iOS Game App&#41;</h4>
+        <p class = "innerText">
+          A group of my friends and I created this game when we were making a
+          project in our high school iOS developement app where we learned 
+          the basics of app developement. We created it in a matter of a weeks, 
+          including the planning process, and the brainstorming and such, and 
+          we developed the app using Swift and XCode.
+        </p>
+
+      </div>
+
+      <div class = "imageContainer">
+        <img src = "imgs\gameplay1.png">
+      </div>
+
+    </div>
+
+    <!---->
+
+    <div id = "WebsiteMockup" class = "content">
+
+      <div class = "innerContentText">
+        <h1 class = "contentTitle">Eggs and Stuff<br></h1>
+        <h4 class = "subTitle">&#40;Egg Recipes Website&#41;</h4>
+        <p class = "innerText">
+          This was one of my college UX design class projects where I planned
+          and designed my own website from scratch, using html, javascript, and 
+          css. Through this project, I gained valuable insights into the 
+          intricacies of web design and the complexities involved in frontend 
+          development.
+        </p>
+
+      </div>
+      
+      <button id = "websiteMock" class = "imageContainer">
+        <img src = "imgs\prototypeDisplay.png">
+      </button>
+
+    </div>
+
+    <script src = "scripts/interactionHandler.js"></script>
     
   </body>
+
+  <footer>
+    <h3 id = "footLogo" class = "logo">RANDY</h3>
+  </footer>
+
 </html>
