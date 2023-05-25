@@ -211,10 +211,10 @@ footer {
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
     box-sizing: border-box;
 }
-  
-  .overlay:hover {
-    border: 10px solid white;
-  }  
+
+.overlay:hover {
+    background: transparent;
+}
 
 .headerImage::after {
     display: block;
@@ -224,10 +224,11 @@ footer {
 }
 
 .more {
+    font-weight: bold;
     margin: 15px;
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 15px;
     transform: translate(0, -50%);
     display: flex;
     flex-direction: column;
@@ -263,6 +264,7 @@ footer {
 
 .text {
     width: 80%;
+    margin-right: 50px;
 }
 
 .languages {
