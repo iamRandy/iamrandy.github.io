@@ -1,278 +1,191 @@
-html {
-    background-color: #000;
-    background: linear-gradient(black 0%, #FFFFFF 30%);
-    color: #fff;
-}
-
 body {
-    margin: 0;
-    font-family: 'Golos Text', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: white;
 }
 
-.iconButton {
-    background: none;
-    border: none;
+#actualContent {
+    color: white;
     padding: 0;
 }
 
-.icon {
-    border-radius: 20%;
-    padding: 8px;
-    background-color: rgba(255, 255, 255, 0.2);
-    background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-    max-width: 40px;
-    max-height: auto;
-    margin-left: auto;
-    margin-right: 10px;
-}
-
-.icon:hover {
-    background-color: black;
-}
-
-.top {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    padding: 20px 20px 0px 20px;
-}
-
-.introduction {
-    display: flex;
-    justify-content: center;
-    padding-top: 200px;
-    text-align: center;
-    height: 500px;
-}
-
-.logo {
-    color: white;
-    font-family: 'Rock Salt', cursive;
-    font-size: 30px;
-    padding: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    font-style: italic;
-    line-height: 0px;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    cursor: grab;
-    transform: scale(1.02);
-}
-
-.links {
-    margin-left: auto;
-}
-
-.info {
-    transition: transform 0.3s ease;
-    display: flex;
-    align-items: top;
-    margin-top: 0px;
-    margin-right: auto;
-}
-
-.item {
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    color: #F1FAEE;
-    margin-right: 30px;
-}
-
-.item:hover {
-    color:#DDD;
-    transform: scale(1.02);
-}
-
-.innerContentText {
-    text-align: center;
-    color: black;
-    height: 80%;
-    width: 90%;
-}
-
-.content {
-    background-color: white;
-    display: grid;
-    margin-top: 400px;
-    margin-bottom: 100px;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 25px 0 25px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#WebsiteMockup {
-    margin-top: 340px;
-}
-
-.subTitle {
-    color: rgba(0, 0, 0, 0.4);
-    margin-top: 0;
-}
-
-h1.contentTitle {
-    margin-bottom: 4px;
-}
-
-h4.subTitle {
-    margin-top: 4px;    
-}
-
-.imageContainer {
-    text-decoration: none;
-    background: none;
-    border: none;
-}
-
-.imageContainer img{
-    transition: transform 0.3s ease;
-    max-width: 100%;
-    border-radius: 15px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    height: auto;
-    padding: 5px;
-    border: 2px solid black;
-}
-
-.imageContainer img:hover {
-    transform: scale(1.02);
-}
-  
-.innerText {
-    text-align: left;
-    margin-top: 0;
-    font-size: 15px;
-}
-
-.headerContent {
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    align-items: start;
-}
-
-.innerText p {
-    text-align: left;
-}
-
-footer {
-    padding: 15px;
-}
-
-#footLogo {
-    color: black;
-    font-size: 20px;
-}
-
-/* Content Pages */
-
-.contentSection {
-    margin: 15px 0 15px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.title {
-    background-color: white;
-    color: black;
-    padding: 15px 60px 10px 60px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-bottom: 0;
-    margin-right: 650px;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.headerImage {
-    position: relative; /* Add position relative to the headerImage container */
-    display: inline-block;
-    background-color: black;
-    border-radius: 15px;
-    width: 95%;
-    background-image: url("imgs/prototypeDisplay.png");
-    background-position: center center;
-    background-size: cover;
-}
-
-.overlay {
-    position: absolute; /* Position the overlay absolutely */
-    top: 0;
-    border-radius: 15px;
-    width: 100%; /* Set the width to cover the entire headerImage container */
-    height: 100%; /* Set the height to cover the entire headerImage container */
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
-    box-sizing: border-box;
-}
-
-.overlay:hover {
-    background: transparent;
-}
-
-.headerImage::after {
-    display: block;
-    text-align: center;
-    padding-top: 40%;
-    content: '';
-}
-
-.more {
-    font-weight: bold;
-    margin: 15px;
+#headerImage {
     position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translate(0, -50%);
+    background-image: url("imgs/ScatteredLions.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#profileImageContainer {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-  
-.more button {
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    font-size: 30px;
-    height: 50px;
-    width: 50px;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-#next:hover {
-    background-color: rgba(255,255,255, 0.4);
-}
-
-.more p {
-    font-size: 20px;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
     position: relative;
-    bottom: -205px;
+    z-index: 1;
+    right: 200px;
 }
 
-.bodyContainer {
-    color: black;
-    margin: 20px 60px 10px 60px;
-    display: flex;
+.profile-container {
+    text-align: center;
 }
 
-.text {
-    width: 80%;
-    margin-right: 50px;
-}
-
-.languages {
-    background-color: black;
-    color: white;
-    width: 15%;
+.profile-image {
+    width: 60%;
     height: auto;
-    padding: 15px;
-    padding-top: 3px;
-    border-radius: 12px;
 }
+
+.imageOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+#headerImage:hover .imageOverlay {
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+}
+
+#descriptionContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    height: 17vh;
+    position: absolute; /* Position it absolutely */
+    top: 46%;
+    left: 49%;
+    width: 33%;
+    z-index: 2; /* Set a higher z-index to make it overlap */
+}
+
+#nameContainer {
+    font-family: 'Unna', serif;
+    font-weight: bold;
+    font-size:100px;
+    position: relative;
+    color: white;
+    left: 47vw;
+    top: 40vh;
+}
+
+#openDescriptionButton {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    transition: transform 5s ease;
+    top: 50vh;
+    left: 57vw;
+    z-index: 3;
+    animation-name: float;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running; /* Initial state is running */
+}
+
+#openDescriptionButton.clicked{
+    animation-name: none;
+    transform: translateX(-10vw) translateY(-100%);
+}
+
+#openDescriptionButton.stop-animation {
+    animation-play-state: paused; /* Stop the animation */
+}
+
+#openDescriptionButton:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#openDescriptionButton:hover h1 {
+    transform: scale(120%);
+}
+
+#description {
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    width: auto;
+    height:90%;
+}
+
+#description li::before {
+    content: "\25B9"; /* Unicode character for bullet point */
+    color: white; /* Custom color for the bullet point */
+    font-weight: bold;
+  }
+
+#content1 {
+    margin-top: 50px;
+    background-color: #2e3c4d;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#projectVisual {
+    background-image: url(imgs/remoraLogo.jpeg);
+    background-color: white;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer; /* Add this line to change the cursor on hover */
+  }
+
+  #projectVisUnderlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    height: 215px;
+    width: 215px;
+  }
+
+  #projectVisual:hover{
+    transform: scale(105%);
+  }
+
+#animationContainer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes float {
+    0% {transform: translateY(-10%);}
+    50% {transform: translateY(20%);}
+    100% {transform: translateY(-10%);}
+}
+
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/* .moving-circle {
+    fill: rgba(255, 255, 255, 0.9);
+    animation: moveCircle 5s linear infinite;
+}
+
+@keyframes moveCircle {
+    0% {
+        transform: translateX(calc(100vw - 100px)) translateY(calc(100vh - 100px));
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+} */
