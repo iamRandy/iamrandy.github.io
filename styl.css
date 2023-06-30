@@ -136,15 +136,11 @@ body {
     box-shadow: none !important;
   }
 
-#projectVisual {
-    background-image: url(imgs/remoraLogo.jpeg);
-    background-color: white;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    background-size: cover;
-    transition: transform 0.5s ease-in-out;
-    cursor: pointer; /* Add this line to change the cursor on hover */
+#visualContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
   }
 
   #projectVisUnderlay {
@@ -157,9 +153,34 @@ body {
     width: 215px;
   }
 
+  #projectVisual {
+    background-image: url(imgs/remoraLogo.jpeg);
+    background-color: white;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
   #projectVisual:hover{
     transform: scale(105%);
   }
+
+#projectTitle {
+    transition: transform 0.5s ease-in-out;
+}
+
+  #projectTitle:hover {
+    transform: scale(102%);
+  }
+
+  #projectTitle:active {
+    color: aquamarine;
+  }
+
 
 #animationContainer {
     width: 100%;
