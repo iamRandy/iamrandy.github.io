@@ -129,6 +129,7 @@ body {
     background-color: #2e3c4d;
     border-radius: 15px;
     padding: 15px;
+    margin-bottom: 15px;
 }
 
 #collapseButton:focus {
@@ -136,11 +137,28 @@ body {
     box-shadow: none !important;
   }
 
+  #titleContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  #visualContainer.dis {
+    display: none;
+  }
+
 #visualContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+  }
+  
+  #visualContainer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   #projectVisUnderlay {
