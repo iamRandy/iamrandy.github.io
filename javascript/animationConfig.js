@@ -4,12 +4,16 @@ var descriptionContainer = document.getElementById('descriptionContainer');
 var collapseButton = document.getElementById('collapseButton');
 var visualUnderlay = document.getElementById('projectVisUnderlay');
 var content = document.getElementById('content1');
+var visual = document.getElementById('visualContainer');
+var background = document.getElementById('blurBackground')
 
 collapseButton.addEventListener('click', function(){
 
     collapseButton.classList.toggle('move');
     visualUnderlay.classList.toggle('move');
-    content.classList.toggle('expand');
+    content.classList.toggle('background');
+    visual.classList.toggle('dis');
+    background.classList.toggle('show');
 
 })
 
