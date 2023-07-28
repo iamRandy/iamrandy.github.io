@@ -15,7 +15,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <body>
         
-        
       <div id="headerImage" class="container-fluid">
       <!-- Background container -->
         <div class="row">
@@ -28,6 +27,7 @@
             <div id="description" class="container-fluid overflow-auto">
               
               <div class="col-lg-12">
+
                 <p>
                   A student from the University of Minnesota who shows 
                   his endless creativity through the art of programming
@@ -38,10 +38,10 @@
                   sketching and drawing on his free time as well as spending
                   time outdoors and with his family.
                 </p>
+
               </div>
 
             </div>
-              
 
           </div>
           
@@ -64,9 +64,8 @@
       <div id="animationContainer">
         <svg id="svgContainer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"></svg>
       </div>      
-      
 
-      <div id="actualContent" class="container-fluid">
+      <div id="actualContent" class="container-fluid" style="background-color: #232936;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#" style="margin-left: 10px;">RANDY THAI</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,70 +86,73 @@
           </div>
         </nav>  
 
-        <div id="content1" class="container" style="width:fit-content">
+        <div id="contentSection" class="container-fluid">
+
+          <div id="selectedContent" class="my-3 card bg-dark overflow-auto" style="height: 700px; color: white">
+            <div class="p-3 card-body">
+              <h4 id="selectedTitle" class="card-title">
+                TITLE
+              </h4>
+              <p id="selectedText" class="card-text">
+                text here
+              </p>
+              <img id="selectedImg" class="card-img-top" src="imgs/remoraView.png">
+
+            </div>
+
+          </div>
 
           <div class="container">
-
-            <div class="row flex-column align-items-center">
-
-              <div id="titleContainer" class="col-lg-6">
-                <a id="collapseButton" class="btn btn-primary" data-toggle="collapse" href="#collapsableContent" role="button" aria-expanded="false" aria-controls="collapsableContent" style="background-color: rgba(255, 255, 255, 0.1); border: none;">
-                  <h2 id="projectTitle" class="display-sm-6" style="font-weight: bold;">REMORA</h2>
-                </a>
-              </div>              
             
-              <div id="visualContainer" class="col-lg-6">
-                <a href="https://devpost.com/software/remora-stay-hydrated" target="_blank">
-                  <div id="projectVisUnderlay">
-                    <div id="projectVisual"></div>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-
-          </div>
-
-          
-          <div id="collapsableContent" class="collapse">
-
-            <div class="container-fluid">
-              <div class="row justify-content-center">
-
-                <div class="col-lg-3" style="left: 50px;">
-                  <div id="visualContainer2" class="col-lg-6">
-                    <a href="https://devpost.com/software/remora-stay-hydrated" target="_blank">
-                      <div id="projectVisUnderlay">
-                        <div id="projectVisual"></div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                
-                <div class="col-lg-8">
-                  <div class="container" style="background-color: #3b4c60; border-radius: 15px; padding: 10px 13px 10px 15px;">
-                    <p>This project was created as an applicant for the HackIllinois 2022 competition hosted by University of Illinois where the goal was to create anything can be used to aid to a modern day problem. My group decided to create a water reminder app that reminds you to drink water on a regular and healthy basis based on your weight and height. The only difference with our app, is that we decided to give a fun and interactive way to drink water to incentivize it by putting it into augmented reality and right in front of the viewers faces!</p>
-                  </div>
-                </div>
+            <div class="row">
   
-                <div class="col-lg-1">
-                  <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" viewBox="0 0 28 20">
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                    <path fill="#FFFFFF" d="m24.698 16.885c.063-.126.063-.252.126-.377 1.512-5.923-2.08-12.853-8.254-16.507 1.952 2.446 3.132 5.582 3.132 8.995 0 1.032-.108 2.038-.313 3.009l.017-.095c-.087.39-.195.728-.33 1.052l.015-.041c-.2-.111-.365-.215-.524-.327l.019.012c-4.757-3.149-8.901-6.575-12.651-10.389l-.011-.011c2.438 3.602 4.965 6.75 7.722 9.678l-.036-.039c-4.121-2.64-7.702-5.378-11.039-8.381l.076.067c.474.784.972 1.463 1.524 2.093l-.014-.017c3.3 4.423 6.99 8.272 11.099 11.626l.117.092c-3.213 1.955-7.687 2.08-12.224 0-1.203-.57-2.236-1.2-3.195-1.923l.046.033c2.022 3.147 4.88 5.601 8.261 7.079l.12.047c1.693.839 3.687 1.331 5.796 1.331s4.103-.491 5.874-1.365l-.078.035h.064c.146-.065.271-.15.378-.252h-.001c1.512-.756 4.474-1.573 6.112 1.573.44.882 1.259-3.213-1.827-6.994z" />
-                  </svg>
-                </div>
+              <div class="col-lg-4 contentSelectors">
+                <button id="remoraCard" class="card-button selected">
+                  <div class="card-body">
+
+                    <h4 class="card-title text-center">
+                      REMORA
+                    </h4>
+                    <img class="card-img-bottom" src="imgs/remoraLogo.jpeg"> 
+
+                  </div>
+                </button>
               </div>
-
+              
+              <div class="col-lg-4 contentSelectors">
+                <button id="PTPCard" class="card-button">
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      PROTECT THE PARK
+                    </div>
+                    <img class="card-img-bottom" src="imgs/gameplay1.png">
+                  </div>
+                </button>
+              </div>
+              
+              <div class="col-lg-4 contentSelectors">
+                <button id="websiteCard" class="card-button">
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      EGGS AND STUFF (MOCK WEBSITE)
+                    </div>
+                    <img class="card-img-bottom" src="imgs/remoraLogo.jpeg">
+                  </div>
+                </button>
+              </div>
+              
+  
             </div>
-          </div>
-      </div>
 
+          </div>
+
+        </div>
+
+      </div>
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
       <script src="javascript/animationConfig.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
       
     </body>
 
