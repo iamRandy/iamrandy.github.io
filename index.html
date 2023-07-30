@@ -65,7 +65,7 @@
         <svg id="svgContainer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"></svg>
       </div>      
 
-      <div id="actualContent" class="container-fluid" style="background-color: #232936;">
+      <div id="actualContent" class="container-fluid" style="background-color: #2A2D34;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#" style="margin-left: 10px;">RANDY THAI</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,15 +88,21 @@
 
         <div id="contentSection" class="container-fluid">
 
-          <div id="selectedContent" class="my-3 card bg-dark overflow-auto" style="height: 700px; color: white">
+          <div id="selectedContent" class="my-3 card overflow-auto" style="height: 700px; background-color: #5C946E; color: white;">
             <div class="p-3 card-body">
-              <h4 id="selectedTitle" class="card-title">
+              <h2 id="selectedTitle" class="card-title">
                 TITLE
-              </h4>
+              </h2>
+              <div id="extLinks"></div>
+
               <p id="selectedText" class="card-text">
                 text here
               </p>
-              <img id="selectedImg" class="card-img-top" src="imgs/remoraView.png">
+
+              <div class="container">
+
+                <img id="selectedImg" class="card-img-top" src="imgs/remoraView.png" alt="project image">
+              </div>
 
             </div>
 
@@ -107,20 +113,20 @@
             <div class="row">
   
               <div class="col-lg-4 contentSelectors">
-                <button id="remoraCard" class="card-button selected">
+                <button id="remoraCard" class="card-button selected outline">
                   <div class="card-body">
 
                     <h4 class="card-title text-center">
                       REMORA
                     </h4>
-                    <img class="card-img-bottom" src="imgs/remoraLogo.jpeg"> 
+                    <img class="card-img-bottom" src="imgs/RemoraAppIcon-1024.png"> 
 
                   </div>
                 </button>
               </div>
               
               <div class="col-lg-4 contentSelectors">
-                <button id="PTPCard" class="card-button">
+                <button id="PTPCard" class="card-button outline">
                   <div class="card-body">
                     <div class="card-title text-center">
                       PROTECT THE PARK
@@ -131,7 +137,7 @@
               </div>
               
               <div class="col-lg-4 contentSelectors">
-                <button id="websiteCard" class="card-button">
+                <button id="websiteCard" class="card-button outline">
                   <div class="card-body">
                     <div class="card-title text-center">
                       EGGS AND STUFF (MOCK WEBSITE)
