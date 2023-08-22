@@ -1,8 +1,52 @@
-.mainContentContainer {
+#artSection {
+  margin: 30px 0 30px 0;
+}
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
-  background-color: aquamarine;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
+}
+
+.artContainer {
+  height: 100%; /* Make the artContainer take full height of the parent div */
+  display: flex; /* Use flex to center content */
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.artContainer:hover {
+  transform: scale(1.05);
+}
+
+.artPost {
+  border-radius: 10px;
+  object-fit: contain;
+  max-width: 110%; /* Ensure the image doesn't exceed the parent container's width */
+  max-height: 110%; /* Ensure the image doesn't exceed the parent container's height */
 }
 
 .outerSpace {
-  padding: 0 150px 0 150px;
+  padding: 0 100px 50px 100px;
+  margin: 30px;
+}
+
+.standout {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: larger;
+}
+
+.refLink {
+  transition: transform 0.4s ease-in-out;
+}
+
+.refLink:hover {
+  transform: scale(1.15);
 }
