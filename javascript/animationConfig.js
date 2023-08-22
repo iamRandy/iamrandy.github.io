@@ -1,5 +1,3 @@
-//testing
-
 var exbutton = document.getElementById('openDescriptionButton');
 var descriptionContainer = document.getElementById('descriptionContainer');
 
