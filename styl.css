@@ -152,7 +152,7 @@ body::-webkit-scrollbar{
   }
 
 #contentSection {
-  background-color: #F6F4EB;
+  /* background-color: #F6F4EB; */
   padding: 0;
 }
 
@@ -315,3 +315,9 @@ body::-webkit-scrollbar{
         transform: translateX(0) translateY(0);
     }
 } */
+
+footer {
+  padding: 30px 20px 5px 20px;
+  color: white;
+  background-color:#2A2D34;
+}
