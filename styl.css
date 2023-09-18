@@ -7,6 +7,13 @@ body::-webkit-scrollbar{
   display: none;
 }
 
+.floatingNav {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}
+
 #description::-webkit-scrollbar {
   display: none;
 }
@@ -151,20 +158,41 @@ body::-webkit-scrollbar{
     margin-bottom: 10px;
   }
 
+/* CONTENT SECTION */
+
 #contentSection {
-  /* background-color: #F6F4EB; */
-  padding: 0;
+  background-color: #202227;
+  height: 110vh;
+  width: 100vw;
+  max-height: fit-content;
+  padding: 30px;
 }
 
-  .card-button.selected {
-    color: #2A2D34;
-    border-style: solid;
-    border: none;
-    border-width: medium;
-    transform: scale(95%);
-    background-color: #91C8E4;
-    font-weight: bolder;
-  }
+#projectIntroduction {
+  margin-top: 80px;
+  font-weight: bold;
+  font-size:30px;
+  position: relative;
+  color: white;
+}
+
+.popoutText {
+  font-size:50px;
+  font-family: 'Nothing You Could Do', cursive;
+  animation: float 2s infinite;
+}
+
+.piece {
+  background-color: #2A2D34;
+  height: 40vh;
+  max-width: 15vw;
+}
+
+.piece:hover {
+  background-color: #40acc7;
+}
+
+/*  */
 
 
   #selectedImg {
