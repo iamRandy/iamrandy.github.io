@@ -1,6 +1,7 @@
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     color: white;
+    background-color: #202227;
 }
 
 body::-webkit-scrollbar{
@@ -24,154 +25,44 @@ body::-webkit-scrollbar{
 
 #actualContent {
     color: #F6F4EB;
+    background-color: #202227;
     padding: 0;
 }
 
 #headerImage {
-    position: relative;
-    background-image: url("imgs/ScatteredLions.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  z-index: 1;
+  position: relative;
+  background-image: url("imgs/ScatteredLions.png");
+  background-size:cover;
+  height: 120vh;
+  max-height: 100%;
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-color:#202227; 
 }
 
-#profileImageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-    right: 200px;
-    
-}
-
-.profile-container {
-    text-align: center;
-    position: relative;
-    bottom: 100px;
-}
-
-.profile-image {
-    width: 60%;
-    height: auto;
-}
-
-.imageOverlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
-    z-index: 1;
-}
-
-#headerImage:hover .imageOverlay {
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
-}
-
-#descriptionContainer {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    height: 19vh;
-    position: absolute; /* Position it absolutely */
-    top: 38%;
-    left: 49%;
-    width: 28%;
-    z-index: 2; /* Set a higher z-index to make it overlap */
-}
-
-#nameContainer {
-    font-family: 'Nothing You Could Do', cursive;
-    font-weight: bold;
-    text-shadow: black;
-    font-size:100px;
-    position: relative;
-    color: white;
-    left: 47vw;
-    top: 27vh;
-}
-
-#openDescriptionButton {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    position: relative;
-    transition: transform 5s ease;
-    top: 36vh;
-    left: 55vw;
-    z-index: 3;
-    animation-name: float;
-    animation-duration: 4s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-play-state: running; /* Initial state is running */
-}
-
-#openDescriptionButton.clicked{
-    animation-name: none;
-    transform: translateX(-7.5vw) translateY(-100%);
-}
-
-#openDescriptionButton.stop-animation {
-    animation-play-state: paused; /* Stop the animation */
-}
-
-#openDescriptionButton:hover {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-#openDescriptionButton:hover h1 {
-    transform: scale(120%);
-}
-
-#description {
-    position: relative;
-    list-style-type: none;
-    padding: 0;
-    width: auto;
-    height:100%;
-}
-
-#description li::before {
-    content: "\25B9"; /* Unicode character for bullet point */
-    color: white; /* Custom color for the bullet point */
-    font-weight: bold;
-  }
-
-#collapseButton:focus {
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  #titleContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
 
 /* CONTENT SECTION */
 
+.headline {
+  margin: 0;
+  padding: 0;
+}
+
 #contentSection {
-  background-color: #202227;
-  height: 110vh;
+  z-index: 0;
+  position: relative;
+  height: 120vh;
   width: 100vw;
   max-height: fit-content;
-  padding: 30px;
+  padding-top: 100px;
+  background-color: #202227;
 }
 
 #projectIntroduction {
-  margin-top: 80px;
+  padding-top: 0px;
   font-weight: bold;
-  font-size:30px;
+  font-size:40px;
   position: relative;
   color: white;
 }
