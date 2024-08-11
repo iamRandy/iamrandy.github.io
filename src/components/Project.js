@@ -7,6 +7,11 @@ import remoraad from '../imgs/remoraAd.png';
 import remorademo from '../imgs/videos/remorademo.gif';
 import remorademo2 from '../imgs/videos/remorademo2.gif';
 
+function eyeBlink() {
+    const target = document.getElementById("eyes");
+    console.log(target.textContent);
+}
+
 function Project() {
     const [selectedInput, setSelectedInput] = useState('c1');
 
@@ -33,10 +38,11 @@ function Project() {
     return (
         <div className="flex w-fit">
             <div id="project container">
-                <div id="projectheader" className="font-extrabold text-5xl my- ml-48 uppercase">
-                    Peep the Projects
-                    *eye blinking thingy*
-                
+                <div id="projectheader" className="flex justify-center flex-nowrap font-extrabold bg-slate-500 h-screen uppercase">
+                        <div className="content-center">
+                            Peep the Projects
+                            <div id="eyes" className='normal-case'>O_o</div>
+                        </div>
                 </div>
                 <div id="content" className="bg-white wrapper"> 
                     <div className="container">
@@ -89,7 +95,7 @@ function Project() {
                         <div className="descArea">
                             <div className="row1 flex pt-10 hideRight">
                                 <p>
-                                    <h1>ABOUT REMORA</h1>
+                                    <p>ABOUT REMORA</p>
                                     Staying hydrated can be a challenge, especially for busy students.
                                     <br/><br/>While there are water reminder apps, they often lack the 
                                     <b> motivation</b> factor. <b>That’s where Remora comes in.</b>

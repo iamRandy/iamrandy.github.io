@@ -17,7 +17,7 @@ body {
 }
 
 #projectheader {
-    font-size: 60px;
+    /* font-size: 60px; */
 }
 
 /* Gallery Section */
@@ -68,8 +68,8 @@ body {
     background: #223;
     color: white;
     border-radius: 50%;
-    width: 50px; /* Set a fixed width */
-    height: 50px; /* Set the same height to make it a circle */
+    width: 70px; /* Set a fixed width */
+    height: 70px; /* Set the same height to make it a circle */
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -298,7 +298,7 @@ input:checked + label {
 
 input:checked + label .description {
     opacity: 1 !important;
-    transform: translateY(-5px) !important;
+    transform: translateY(10px) !important;
 }
 
 /* Card Background Images */
