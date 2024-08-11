@@ -3,6 +3,11 @@ body {
     background-color: black;
 }
 
+#animation_zone {
+    position: absolute;
+    height: 130vh;
+    width: 98vw;
+}
 
 /* Main Section */
 #header {
@@ -16,7 +21,6 @@ body {
     width: 30%;
     transition: all 1s ease-in-out;
 }
-
 
 #profile_description_container {
     position: absolute;
@@ -61,7 +65,7 @@ body {
 
     #profile_description_container {
         position: absolute;
-        background-color: rgba(0,0,0,0.);
+        background-color: rgba(0,0,0,0.8);
         font-size: 12px;
         padding: 20px 5px 5px 5px;
         border-radius: 7px;
