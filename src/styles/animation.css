@@ -8,7 +8,8 @@ body {
 /* Main Section */
 #header {
     background-image: url('../imgs/Scattered.png');
-    height: 140vh;
+    width: auto;
+    height: 150vh;
 }
 
 /* Project Section */
@@ -112,7 +113,7 @@ body {
 /* Path Select */
 .pathSelect {
     font-weight: 600;
-    font-size: x-large;
+    font-size: large;
     color: white;
     width: max-content;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -236,9 +237,9 @@ body {
 }
 
 @keyframes breath {
-    0% { transform: scale(1); opacity: .6; }
-    50% { transform: scale(1.5); opacity: .7; }
-    100% { transform: scale(1); opacity: .6; }
+    0% { transform: scale(1); opacity: .4; }
+    50% { transform: scale(1.5); opacity: .6; }
+    100% { transform: scale(1); opacity: .4; }
 }
 
 @keyframes floating {
