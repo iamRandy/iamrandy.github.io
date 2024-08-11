@@ -1,5 +1,5 @@
 import NavButton from './components/NavButton.js';
-import profile from './imgs/meblackandwhite.PNG';
+import profile from './imgs/me.png';
 import PathSection from './components/PathSection.js';
 import Project from './components/Project.js';
 import Art from './components/Art.js';
@@ -10,25 +10,16 @@ function App() {
     <div id="MAIN" className="min-h-80 flex flex-col">
       <section id="home">
         <div id="header" className="flex justify-center bg-center bg-cover bg-local">
-          <div id="profileContainer" className="top-12 left-24 relative w-1/2 h-auto items-center">
-            <img id="pfp" src={profile} alt="pfp" className="relative order-2 z-10" />
+          
+          <div id="profileContainer" className="absolute top-10 right-40">
+            <img id="pfp" src={profile} alt="pfp" className="relative" />
           </div>
-          <div className="flex justify-center">
-            <div id="descriptionCard" className="bg-white opacity-80 w-96 h-1/4 right-60 bottom-24 order-1 absolute z-20 rounded-lg">
-              <p className="p-4 bg-transparent z-0">A student from the University of Minnesota who shows his endless creativity through the art of programming and developement.</p>
-              <div className="overflow-x-auto whitespace-nowrap px-2 z-10"> 
-              {/* TODO figure out how to center the mf text */}
-                <NavButton text="JS" />
-                <NavButton text="Java" />
-                <NavButton text="Python" />
-                <NavButton text="WebDev" />
-                <NavButton text="C" />
-                <NavButton text="C#" />
-                <NavButton text="Swift" />
-                <NavButton text="..." />
-              </div>
+          <div id="profile_description_container">
+            <div id="profile_description_text" className="profile_description_text">
+              <p>An artist and a developer. Learning everywhere he goes, he tries to utilize his skills to bring smiles on peoples' faces everyday :)</p>
             </div>
           </div>
+          
         </div>
       </section>
       <section id="path">
