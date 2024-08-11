@@ -1,16 +1,39 @@
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 // import NavButton from './NavButton';
-import watersvg from '../imgs/svgs/watersvg.svg';
 import controllersvg from '../imgs/svgs/controller.svg';
+
+//Remora Images
+import watersvg from '../imgs/svgs/watersvg.svg';
 import remoraad from '../imgs/remoraAd.png';
 import remorademo from '../imgs/videos/remorademo.gif';
 import remorademo2 from '../imgs/videos/remorademo2.gif';
 
-function eyeBlink() {
-    const target = document.getElementById("eyes");
-    console.log(target.textContent);
-}
+window.onload = function() {
+    const eyes = document.getElementById("eyes");
+
+    function blink() {
+        setTimeout(() => {
+            eyes.textContent = '-_-';
+            console.log("blink1");
+        }, 200);
+        setTimeout(() => {
+            eyes.textContent = 'O_O';
+            console.log("blink2");
+        }, 400);
+        setTimeout(() => {
+            eyes.textContent = '-_-';
+            console.log("blink3");
+        }, 600);
+        setTimeout(() => {
+            eyes.textContent = 'O_O';
+            console.log("blink4");
+        }, 800);
+    }
+
+    blink(); // Initial call to start the blinking immediately
+    setInterval(blink, 4000); // Repeat the blinking sequence every 4 seconds
+};
 
 function Project() {
     const [selectedInput, setSelectedInput] = useState('c1');
@@ -38,10 +61,10 @@ function Project() {
     return (
         <div className="flex w-fit">
             <div id="project container">
-                <div id="projectheader" className="flex justify-center flex-nowrap font-extrabold bg-slate-500 h-screen uppercase">
-                        <div className="content-center">
+                <div id="projectheader" className="flex justify-center flex-nowrap font-extrabold my-48 uppercase">
+                        <div className="content-center text-center">
                             Peep the Projects
-                            <div id="eyes" className='normal-case'>O_o</div>
+                            <div id="eyes" className='normal-case'>O_O</div>
                         </div>
                 </div>
                 <div id="content" className="bg-white wrapper"> 

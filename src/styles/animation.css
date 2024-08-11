@@ -1,6 +1,5 @@
 /* General Styles */
 body {
-    font-family: 'Helvetica', sans-serif;
     background-color: black;
 }
 
@@ -37,7 +36,7 @@ body {
 }
 
 .container {
-    height: 550px;
+    height: 70vh;
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
@@ -59,7 +58,7 @@ body {
 
 .card > .row {
     color: white;
-    width: 50%;
+    width: 97%;
     position: relative;
     display: flex;
     flex-wrap: nowrap;
@@ -69,8 +68,8 @@ body {
     background: #223;
     color: white;
     border-radius: 50%;
-    width: 70px; /* Set a fixed width */
-    height: 70px; /* Set the same height to make it a circle */
+    width: 50px;
+    height: 50px; 
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -294,12 +293,12 @@ input {
 }
 
 input:checked + label {
-    width: 50vw;
+    width: 40vw;
 }
 
 input:checked + label .description {
     opacity: 1 !important;
-    transform: translateY(10px) !important;
+    transform: translateY(-5px) !important;
 }
 
 /* Card Background Images */
