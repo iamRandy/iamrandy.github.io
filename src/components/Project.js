@@ -9,32 +9,6 @@ import remoraad from '../imgs/remoraAd.png';
 import remorademo from '../imgs/videos/remorademo.gif';
 import remorademo2 from '../imgs/videos/remorademo2.gif';
 
-window.onload = function() {
-    const eyes = document.getElementById("eyes");
-
-    function blink() {
-        setTimeout(() => {
-            eyes.textContent = '-_-';
-            console.log("blink1");
-        }, 200);
-        setTimeout(() => {
-            eyes.textContent = 'O_O';
-            console.log("blink2");
-        }, 400);
-        setTimeout(() => {
-            eyes.textContent = '-_-';
-            console.log("blink3");
-        }, 600);
-        setTimeout(() => {
-            eyes.textContent = 'O_O';
-            console.log("blink4");
-        }, 800);
-    }
-
-    blink(); // Initial call to start the blinking immediately
-    setInterval(blink, 4000); // Repeat the blinking sequence every 4 seconds
-};
-
 function Project() {
     const [selectedInput, setSelectedInput] = useState('c1');
 
@@ -42,6 +16,34 @@ function Project() {
         setSelectedInput(event.target.id);
     };
 
+    useEffect(() => {
+        const eyes = document.getElementById("eyes");
+    
+        function blink() {
+            setTimeout(() => {
+                eyes.textContent = '-_-';
+                console.log("blink1");
+            }, 200);
+            setTimeout(() => {
+                eyes.textContent = 'O_O';
+                console.log("blink2");
+            }, 400);
+            setTimeout(() => {
+                eyes.textContent = '-_-';
+                console.log("blink3");
+            }, 600);
+            setTimeout(() => {
+                eyes.textContent = 'O_O';
+                console.log("blink4");
+            }, 800);
+        }
+    
+        blink(); // Initial call to start the blinking immediately
+        const intervalId = setInterval(blink, 4000); // Repeat the blinking sequence every 4 seconds
+    
+        return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    }, []);
+    
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -56,16 +58,21 @@ function Project() {
         
         const hiddenElements = document.querySelectorAll(".hideRight");
         hiddenElements.forEach((el) => observer.observe(el));        
-    })
+    
+        return () => {
+            hiddenElements.forEach((el) => observer.unobserve(el));
+        };
+    }, []);
+    
 
     return (
         <div className="flex w-fit">
-            <div id="project container">
+            <div id="container">
                 <div id="projectheader" className="flex justify-center flex-nowrap font-extrabold my-48 uppercase">
-                        <div className="content-center text-center">
-                            Peep the Projects
-                            <div id="eyes" className='normal-case'>O_O</div>
-                        </div>
+                    <div className="content-center text-center">
+                        Peep the Projects
+                        <div id="eyes" className='normal-case'>O_O</div>
+                    </div>
                 </div>
                 <div id="content" className="bg-white wrapper"> 
                     <div className="container">
@@ -118,7 +125,7 @@ function Project() {
                         <div className="descArea">
                             <div className="row1 flex pt-10 hideRight">
                                 <p>
-                                    <p>ABOUT REMORA</p>
+                                    ABOUT REMORA
                                     Staying hydrated can be a challenge, especially for busy students.
                                     <br/><br/>While there are water reminder apps, they often lack the 
                                     <b> motivation</b> factor. <b>That’s where Remora comes in.</b>
