@@ -22,19 +22,15 @@ function Project() {
         function blink() {
             setTimeout(() => {
                 eyes.textContent = '-_-';
-                console.log("blink1");
             }, 200);
             setTimeout(() => {
                 eyes.textContent = 'O_O';
-                console.log("blink2");
             }, 400);
             setTimeout(() => {
                 eyes.textContent = '-_-';
-                console.log("blink3");
             }, 600);
             setTimeout(() => {
                 eyes.textContent = 'O_O';
-                console.log("blink4");
             }, 800);
         }
     
@@ -47,7 +43,6 @@ function Project() {
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                console.log(entry)
                 if (entry.isIntersecting) {
                     entry.target.classList.add("showRight");
                 } else {
