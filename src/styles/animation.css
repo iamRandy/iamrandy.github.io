@@ -38,6 +38,68 @@ body {
     transition: all 1s ease-in-out;
 }
 
+.container {display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+/* .linkContainer {
+
+} */
+
+.linkButton {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: floating infinite 5s ease-in-out;
+
+}
+
+.linkButton:hover {
+    cursor: pointer;
+}
+
+.linkButton::after {
+    content: '';
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    width: 0;
+    height: 0;
+    rotate: 90deg;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid white;
+    transition: opacity 1s;
+}
+
+.linkButton.clicked::after {
+    opacity: 0;
+}
+
+.linkButton::before {
+    content: '';
+    transform-origin: center left;
+    position: absolute;
+    background-color: white;
+    height: 23px;
+    width: 0px;
+    left: 28%;
+    top: 27%;
+    transition: width 1s;
+}
+
+.linkButton.clicked::before {
+    width: 23px;
+}
+
 .profile_description_text::before {
     content: 'RANDY THAI //';
     font-family: "Gloria Hallelujah", cursive !important;
