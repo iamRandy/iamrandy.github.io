@@ -16,13 +16,12 @@ body {
     background-color: white;
 }
 
-#projectheader {
-    font-size: 60px;
+#gallery {
+    background-color: black;
 }
 
-/* Gallery Section */
-.banner {
-    background-color: gray;
+#projectheader {
+    font-size: 60px;
 }
 
 /* Wrapper and Container */
@@ -187,6 +186,10 @@ body {
     animation: projectSection 1.25s linear forwards !important;
 }
 
+.showGallery {
+    animation: gallerySection 1.25s linear forwards !important;
+}
+
 .projectTransition {
     /* transition: all 3s ease-in-out; */
     animation: switchBackground 4s ease-in-out forwards !important;
@@ -274,6 +277,18 @@ body {
     }
     25%, 100% {
         transform: translateX(0vw);
+    }
+}
+
+@keyframes gallerySection {
+    0% {
+        transform: translateX(-100vw);
+    }
+    15% {
+        transform: translateX(5vw);
+    }
+    25%, 100% {
+        transform: translateX(0);
     }
 }
 

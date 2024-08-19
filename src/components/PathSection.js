@@ -9,7 +9,7 @@ function switchScreens(target) {
     } else {
         document.getElementById("path").style.display = "none";
         document.getElementById("gallery").style.display = "inline";
-        document.body.style.backgroundColor = "gray";
+        document.getElementById("gallery").classList.add("showGallery");
     }
 }
 
@@ -66,7 +66,7 @@ function PathSection() {
                 if (project)
                     project.style.display = "none";
                 createMotionEffect(10, "left");
-                getTransition.style.setProperty('--anim-transition', 'gray');
+                getTransition.style.setProperty('--anim-transition', 'black');
             }
             
             setTimeout(function() {

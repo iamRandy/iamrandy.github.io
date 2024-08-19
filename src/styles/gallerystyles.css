@@ -1,0 +1,218 @@
+.banner {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overlay {
+    display: flex;
+    justify-content: end;
+    z-index: 10;
+    background-color: rgba(21, 57, 95, 0.5);
+    position: absolute;
+    height: 90vh;
+    width: 100%;
+    bottom: 0%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay::before {
+    content: "some description";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#close_overlay {
+    position: relative;
+    font-weight: bolder;
+    font-size: 80px;
+    background: none;
+    color: white;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: white;
+    height: 40px;
+    width: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+#box1 {
+    background-image: url("../imgs/pokemonart.jpeg");
+}
+
+#box2 {
+    background-image: url("../imgs/kaze.jpg");
+}
+
+#box3 {
+    background-image: url("../imgs/lenny.jpg");
+}
+
+#box4 {
+    background-image: url("https://i.pinimg.com/564x/67/02/8d/67028d1f7f472637d5abcfb1c9f9afdb.jpg")
+}
+
+#box5 {
+    background-image: url("https://images6.alphacoders.com/135/1351414.png")
+}
+
+.selected {
+    height: 350px !important;
+    width: 350px !important;
+}
+
+.threebox {
+    border-radius: 20px 0 20px 0;
+    height: 320px;
+    width: 320px;
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+    background-size: cover;
+    transition: scale 1s ease-in-out;
+}
+
+.largebox.selected {
+    height: 350px !important;
+    width: 570px !important;
+}
+
+.largebox {
+    border-radius: 20px 0 20px 0;
+    height: 320px;
+    width: 650px;
+    background-size: cover;
+    transition: scale 1s ease-in-out;
+}
+
+.row {
+    position: relative;
+    padding: 10px 20px 0 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#row2::before {
+    background-image: none !important;
+}
+
+.row::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(black, transparent);
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    filter: blur(2px);
+}
+
+.threebox:hover {
+    animation: emphasize 1s ease-in-out forwards !important;
+}
+
+#box1:hover::after {
+    content: '12/22/04';
+}
+
+#box2:hover::after {
+    content: 'YUJI';
+}
+
+#box3:hover::after {
+    content: 'TOBY';
+}
+
+.threebox:hover::after {
+    content: '';
+    font-weight: bolder;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 8px;
+}
+
+.threebox:hover::before {
+    content: '';
+    border-radius: 20px 0 20px 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+    height: 60px;
+    width: 100%;
+}
+
+@keyframes emphasize {
+
+    0% {
+        z-index: 5;
+        transform: scale(1);
+    }
+
+    100% {
+        z-index: 5;
+        transform: scale(1.1);
+    }
+}
+
+.welcome {
+    font-size: larger;
+    z-index: 1;
+    margin: 200px 0 200px 0;
+}
+
+
+.welcome::before {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    box-shadow: 90px 110px 100px 60px cyan;
+    transition: box-shadow 1s ease-in-out;
+    animation: beforeanim 5s ease-in-out infinite;
+}
+
+.welcome::after {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    box-shadow: -90px 110px 100px 60px purple;
+    transition: box-shadow 1s ease-in-out;
+    animation: afteranim 5s ease-in-out infinite;
+}
+
+@keyframes beforeanim {
+    0%, 100% {
+        transform: translateX(-30px);
+    }
+    50% {
+        transform: translateX(30px)
+    }
+}
+
+@keyframes afteranim {
+    0%, 100% {
+        transform: translateX(30px);
+    }
+    50% {
+        transform: translateX(-30px)
+    }
+}
