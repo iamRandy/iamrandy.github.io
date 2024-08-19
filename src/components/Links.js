@@ -24,7 +24,7 @@ function Links({ onButtonClick }) {
 
     return(
         <div className="linkContainer">
-            <div className="linkButton">
+            <div className="linkButton" title='reduce motion'>
             </div>
         </div>
     );

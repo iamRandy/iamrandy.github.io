@@ -46,14 +46,13 @@ body {
     background-color: black;
 }
 
-/* .linkContainer {
-
-} */
-
-.linkButton {
+.linkContainer {
     position: absolute;
     right: 20px;
     top: 10px;
+}
+
+.linkButton {
     height: 50px;
     width: 50px;
     border-radius: 50%;
