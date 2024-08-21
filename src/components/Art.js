@@ -34,16 +34,13 @@ function Art () {
     
         const handleClick = (e) => {
             try {
-                console.log(e.target.classList);
                 if (typeof(e.target.className) != "string") return;
                 const classes = e.target.className.split(' ');
     
                 if (classes.includes("threebox")) {
                     const style = window.getComputedStyle(e.target);
                     const backgroundImage = style.backgroundImage;
-                    console.log(backgroundImage);
                     if (!classes.includes("selected")) {
-                        console.log('has select');
                         const prev = document.querySelector(".selected");
                         if (prev) {
                             prev.classList.remove("selected");
