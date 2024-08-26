@@ -12,7 +12,7 @@ body {
 /* Main Section */
 #header {
     background-image: url('../imgs/Scattered.png');
-    width: auto;
+    width: 100%;
     height: 155vh;
 }
 
@@ -38,7 +38,8 @@ body {
     transition: all 1s ease-in-out;
 }
 
-.container {display: flex;
+.container {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -47,6 +48,9 @@ body {
 }
 
 .linkContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     position: absolute;
     right: 20px;
     top: 10px;
@@ -57,15 +61,50 @@ body {
     width: 50px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.4);
-    animation: floating infinite 5s ease-in-out;
+}
 
+.linkButton.home {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 90%; /* Adjust this value as needed */
+    left: 2%;
+    z-index: 1000; /* Ensure it stays on top */
+    margin-top: -50px; /* Adjust this value to match the height of the linkButton home */
+    animation: floating infinite 5s ease-in-out;
+}
+
+.linkButton.motion {
+    animation: floating infinite 5s ease-in-out;
+}
+
+.linkButton.github {
+    animation: floating infinite 4s ease-in-out;
+}
+
+.linkButton.linkedin {
+    animation: floating infinite 6s ease-in-out;
+}
+
+.linkIcon {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s ease-in-out;
+}
+
+.linkIcon:hover {
+    transform: scale(1.1);
 }
 
 .linkButton:hover {
     cursor: pointer;
 }
 
-.linkButton::after {
+.linkButton.motion::after {
     content: '';
     position: absolute;
     left: 30%;
@@ -76,14 +115,19 @@ body {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-bottom: 20px solid white;
+    transition: transform .2s ease-in-out;
     transition: opacity 1s;
 }
 
-.linkButton.clicked::after {
+.linkButton.motion:hover::after {
+    transform: scale(1.1);
+}
+
+.linkButton.motion.clicked::after {
     opacity: 0;
 }
 
-.linkButton::before {
+.linkButton.motion::before {
     content: '';
     transform-origin: center left;
     position: absolute;
@@ -92,11 +136,17 @@ body {
     width: 0px;
     left: 28%;
     top: 27%;
-    transition: width 1s;
+    transition: width 1s !important;
+    transition: transform .2s ease-in-out;
 }
 
-.linkButton.clicked::before {
+
+.linkButton.motion.clicked::before {
     width: 23px;
+}
+
+.linkButton.motion.clicked:hover::before {
+    transform: scale(1.1);
 }
 
 .profile_description_text::before {
