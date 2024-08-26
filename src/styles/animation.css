@@ -76,7 +76,7 @@ body {
     animation: floating infinite 5s ease-in-out;
 }
 
-.linkButton.motion {
+.linkButton.reducedMotion {
     animation: floating infinite 5s ease-in-out;
 }
 
@@ -104,7 +104,7 @@ body {
     cursor: pointer;
 }
 
-.linkButton.motion::after {
+.linkButton.reducedMotion::after {
     content: '';
     position: absolute;
     left: 30%;
@@ -119,15 +119,15 @@ body {
     transition: opacity 1s;
 }
 
-.linkButton.motion:hover::after {
+.linkButton.reducedMotion:hover::after {
     transform: scale(1.1);
 }
 
-.linkButton.motion.clicked::after {
+.linkButton.reducedMotion.clicked::after {
     opacity: 0;
 }
 
-.linkButton.motion::before {
+.linkButton.reducedMotion::before {
     content: '';
     transform-origin: center left;
     position: absolute;
@@ -141,11 +141,11 @@ body {
 }
 
 
-.linkButton.motion.clicked::before {
+.linkButton.reducedMotion.clicked::before {
     width: 23px;
 }
 
-.linkButton.motion.clicked:hover::before {
+.linkButton.reducedMotion.clicked:hover::before {
     transform: scale(1.1);
 }
 
@@ -208,6 +208,7 @@ body {
 /* Project Section */
 #projects {
     background-color: white;
+    display: inline;
 }
 
 .interactive_components:hover {
@@ -358,6 +359,10 @@ body {
     animation-delay: var(--anim-delay);
 }
 
+.hiddenSection {
+    display: none !important;
+}
+
 /* Transition Animations */
 .hide {
     opacity: 0;
@@ -384,7 +389,6 @@ body {
 }
 
 .projectTransition {
-    /* transition: all 3s ease-in-out; */
     animation: switchBackground 4s ease-in-out forwards !important;
 }
 

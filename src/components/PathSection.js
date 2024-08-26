@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 
 function switchScreens(target) {
     if (target === "project") {
-        document.getElementById("path").style.display = "none";
-        document.getElementById("projects").style.display = "inline";
-        document.getElementById("projects").classList.add("showProjects")
+        document.getElementById("path").classList.add("hiddenSection");
+        document.getElementById("projects").classList.remove("hiddenSection");
+        document.getElementById("projects").classList.add("showProjects");
     } else {
-        document.getElementById("path").style.display = "none";
-        document.getElementById("gallery").style.display = "inline";
+        document.getElementById("path").classList.add("hiddenSection");
+        document.getElementById("gallery").classList.remove("hiddenSection");
         document.body.style.backgroundColor = "gray";
     }
 }
@@ -59,18 +59,29 @@ function PathSection() {
             const getTransition = document.querySelector(".projectTransition");
             if (buttonClicked === "projectSelect") {
                 if (gallery)
-                    gallery.style.display = "none";
+                    gallery.classList.add("hiddenSection");
                 createMotionEffect(10, "right");
                 getTransition.style.setProperty('--anim-transition', 'white');
             } else {
                 if (project)
-                    project.style.display = "none";
+                    project.classList.add("hiddenSection");
                 createMotionEffect(10, "left");
                 getTransition.style.setProperty('--anim-transition', 'gray');
             }
             
-            setTimeout(function() {
+            setTimeout(function() { // Closing
+                const animArea = document.querySelector(".animationContainer");
+                const fxArray = document.querySelectorAll(".animcomponent");
+                if (!fxArray || !animArea) return;
+
+                fxArray.forEach(fx => {
+                    animArea.removeChild(fx); 
+                });
+
                 buttonClicked === "projectSelect" ? switchScreens("project") : switchScreens("gallery");
+                project.classList.contains("hiddenSection") ? project.classList.remove("hiddenSection") : gallery.classList.remove("hiddenSection");
+                element.classList.remove("clicked");
+                setPressed(false);
             }, 4000);
         };
     

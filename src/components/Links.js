@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 function Links({ onButtonClick }) {
     useEffect(() => {
-        const linkButton = document.querySelector(".linkButton");
+        const linkButton = document.querySelector(".linkButton.reducedMotion");
         if (!linkButton) {
             console.error("Link Button Not Found");
             return;
@@ -25,7 +25,7 @@ function Links({ onButtonClick }) {
 
     return(
         <div className="linkContainer">
-            <div className="linkButton motion" title='reduce motion'></div>
+            <div className="linkButton reducedMotion" title='reduce motion'></div>
             <div className="linkButton github" title='GitHub'>
                 <a className="linkIcon" target="_blank" rel="noreferrer" href="https://github.com/iamRandy">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%" fill="white" class="bi bi-github" viewBox="0 0 16 16">
