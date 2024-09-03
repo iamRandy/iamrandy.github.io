@@ -13,7 +13,8 @@ function ProjectComponent({name = "no name",
         // Focus Effect //
         const target_imgs = document.querySelectorAll(".project_images");
         const handleImgClick = (e) => {
-            e.classList.contains("focus") ? e.classList.remove("focus") : e.classList.add("focus");
+            const target_img = e.target;
+            target_img.classList.contains("focus") ? target_img.classList.remove("focus") : target_img.classList.add("focus");
         }
 
         target_imgs.forEach((e) => {
@@ -26,9 +27,9 @@ function ProjectComponent({name = "no name",
         const handleHeroClick = (e) => {
             const heroImgObj = e.target;
 
-            target_project_displays.forEach((e) => {
-                if (e.id === heroImgObj.id) {
-                    console.log(e.id);
+            target_project_displays.forEach((dis) => {
+                if (dis.id === heroImgObj.id) {
+                    dis.classList.contains("show_right") ? dis.classList.remove("show_right") : dis.classList.add("show_right");
                 }
             })
         }

@@ -4,6 +4,12 @@
     pointer-events: none;
 }
 
+.show_right {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
 .project_section {
     height: calc(100vh * 1.5);
 }
@@ -97,6 +103,7 @@
     gap: 20px;
     position: relative;
     right: 5%;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .project_text {
