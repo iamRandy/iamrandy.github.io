@@ -30,6 +30,11 @@
     transform: translateY(-5px);
 }
 
+.project_images.focus {
+    transform: scale(2);
+    z-index: 11 !important;
+}
+
 .project_images#project_img1 {
     z-index: 1;
 }
