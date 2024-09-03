@@ -1,0 +1,108 @@
+.project_section {
+    height: calc(100vh * 1.5);
+}
+.project_header {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+    background-image: linear-gradient(transparent, 70%, black);
+}
+
+.project_content {
+    background-color: black;
+    height: 100vh;
+}
+
+.project_images {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    position: absolute;
+    transition: transform .2s ease-in-out;
+    border: black 2px solid;
+}
+
+.project_images:hover {
+    z-index: 10 !important;
+    transform: translateY(-5px);
+}
+
+.project_images#project_img1 {
+    z-index: 1;
+}
+
+.project_images#project_img2 {
+    margin: 5% 0 0 5%;
+}
+
+.project_images#project_img3 {
+    z-index: 0;
+    margin: -5% 0 0 4%;
+}
+
+.project_hero_image {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    position: relative;
+    left: calc(50vw - 100px);
+    top: -40px;
+    border-radius: 10px;
+    transition: transform .2s ease-in-out;
+    border: 5px white solid;
+}
+
+.project_hero_image:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+.project_hero h1 {
+    position: relative; 
+    z-index: 2;
+    margin-left: 20%;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: #00477b 1px 0 10px;
+}
+
+.project_hero h1::before {
+    z-index: 1;
+    content: '';
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    position: absolute;
+    transform: translate(-10px, 50px);
+}
+
+.project_display {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    right: 5%;
+}
+
+.project_text {
+    max-width: 300px;
+}
+
+/* Image Shapes */
+.project_supporting_images .rectangle {
+    object-fit: contain;
+    height: 120%;
+    width: fit-content;
+    margin-left: 180px !important;
+    margin-top: -150px !important;
+}
+
+/* Remora Section */
+#remora {
+    color: white;
+    padding: 20px;
+}
+
