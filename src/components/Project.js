@@ -1,19 +1,15 @@
 import '../App.css';
 import '../styles/projectstyles.css';
-import React, { useState, useEffect } from 'react';
-import controllersvg from '../imgs/svgs/controller.svg';
+import React, { useEffect } from 'react';
 import ProjectComponent from '../components/ProjectComponent.js';
+
+// Images
 import remora_logo from '../imgs/remoraLogo.jpeg';
 import remora_ad from '../imgs/remoraAd.png';
 import remora_icon from '../imgs/RemoraAppIcon.png';
 import remora_demo from '../imgs/videos/remorademo.gif';
 
 function Project() {
-    const [selectedInput, setSelectedInput] = useState('c1');
-
-    const handleInputChange = (event) => {
-        setSelectedInput(event.target.id);
-    };
 
     useEffect(() => {
         const eyes = document.getElementById("eyes");

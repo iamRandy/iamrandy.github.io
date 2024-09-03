@@ -8,24 +8,56 @@ function ProjectComponent({name = "no name",
     titles = [null, null, null],
     image_shapes = ["", "", ""]
 }) {
+
     useEffect(() => {
+        // Focus Effect //
         const target_imgs = document.querySelectorAll(".project_images");
+        const handleImgClick = (e) => {
+            e.classList.contains("focus") ? e.classList.remove("focus") : e.classList.add("focus");
+        }
 
         target_imgs.forEach((e) => {
-            e.addEventListener('click', () => {
-                e.classList.contains("focus") ? e.classList.remove("focus") : e.classList.add("focus");
-            });
+            e.addEventListener('click', handleImgClick);
         });
-    });
+        
+        // Display Project Content //
+        const target_project_heros = document.querySelectorAll(".project_hero_image");
+        const target_project_displays = document.querySelectorAll(".project_display")
+        const handleHeroClick = (e) => {
+            const heroImgObj = e.target;
+
+            target_project_displays.forEach((e) => {
+                if (e.id === heroImgObj.id) {
+                    console.log(e.id);
+                }
+            })
+        }
+
+        target_project_heros.forEach((e) => {
+            e.addEventListener('click', handleHeroClick);
+        })
+
+        // Cleanup //
+        return () => {
+            target_imgs.forEach((e) => {
+                e.removeEventListener('click', handleImgClick);
+            });
+
+            target_project_heros.forEach((e) => {
+                e.removeEventListener('click', handleHeroClick);
+            })
+        };
+    }, []);
+
 
     return(
         <section id="remora">
-            <div className="project_hero">
+            <div id={name} className="project_hero">
                 <h1>{name}</h1>
-                <img id="project header image" alt="remora logo" title="remora logo" className="project_hero_image" src={header_image} />
+                <img id={name} alt="remora logo" title="remora logo" className="project_hero_image" src={header_image} />
             </div>
 
-            <div className="project_display">
+            <div id={name} className="project_display hide_right">
                 <div className="project_text">
                     {description}
                 </div>
