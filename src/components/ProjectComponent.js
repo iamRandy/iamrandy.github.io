@@ -30,6 +30,7 @@ function ProjectComponent({name = "no name",
             target_project_displays.forEach((dis) => {
                 if (dis.id === heroImgObj.id) {
                     dis.classList.contains("show_right") ? dis.classList.remove("show_right") : dis.classList.add("show_right");
+                    heroImgObj.classList.contains("shrink") ? heroImgObj.classList.remove("shrink") : heroImgObj.classList.add("shrink");
                 }
             })
         }
@@ -55,7 +56,7 @@ function ProjectComponent({name = "no name",
         <section id="remora">
             <div id={name} className="project_hero">
                 <h1>{name}</h1>
-                <img id={name} alt="remora logo" title="remora logo" className="project_hero_image" src={header_image} />
+                <img id={name} alt={name} title={name} className="project_hero_image" src={header_image} />
             </div>
 
             <div id={name} className="project_display hide_right">
