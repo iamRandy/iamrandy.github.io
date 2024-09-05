@@ -67,15 +67,13 @@ function Project() {
                 <div id="content" className="project_content"> 
                     <ProjectComponent name="REMORA" 
                     header_image={remora_logo}
-                    description='This project was created as an applicant for the 
-                    HackIllinois 2022 competition hosted by University of Illinois 
-                    where the goal was to create anything can be used to aid to a 
-                    modern day problem. My group decided to create a water reminder 
-                    app that reminds you to drink water on a regular and healthy basis 
-                    based on your weight and height. The only difference with our app, 
-                    is that we decided to give a fun and interactive way to drink 
-                    water to incentivize it by putting it into augmented reality and 
-                    right in front of the viewers faces!'
+                    description='Staying hydrated can be a challenge, especially for busy students. 
+                    While there are water reminder apps, they often lack the <b>motivation</b> factor. 
+                    <b>That’s where Remora comes in.</b>
+                    <br><br>We’ve created an app that not only reminds you to drink water, 
+                    but also provides a unique incentive - a pet Remora.<br/><br/>By drinking 
+                    water, you’re not just taking care of yourself, but also your 
+                    virtual pet. Remora is designed to <b>make hydration fun and engaging!</b>'
                     titles={["App Icon","Mockup","Demo"]}
                     image_shapes={["","","rectangle"]}
                     supporting_images={[remora_icon, remora_ad, remora_demo]}

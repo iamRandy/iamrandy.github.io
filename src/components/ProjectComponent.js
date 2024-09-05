@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import nullimg from '../imgs/null.jpeg';
+import DOMPurify from 'dompurify';
 
 function ProjectComponent({name = "no name", 
     description = "no description...", 
@@ -8,6 +9,7 @@ function ProjectComponent({name = "no name",
     titles = [null, null, null],
     image_shapes = ["", "", ""]
 }) {
+    const sanitizedDescription = DOMPurify.sanitize(description);
 
     useEffect(() => {
         // Focus Effect //
@@ -61,7 +63,7 @@ function ProjectComponent({name = "no name",
 
             <div id={name} className="project_display hide_right">
                 <div className="project_text">
-                    {description}
+                    <p dangerouslySetInnerHTML={{ __html: sanitizedDescription }}></p>
                 </div>
                 <div className="project_supporting_images">
                     <img alt={titles[0]} title={titles[0]} id="project_img1" className={`project_images ${image_shapes[0]}`} src={supporting_images[0]}></img>
