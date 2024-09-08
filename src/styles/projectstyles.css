@@ -18,7 +18,7 @@
     display: flex;
     height: 100vh;
     justify-content: center;
-    align-items: center;
+
     text-align: center;
     font-weight: bolder;
     background-image: linear-gradient(transparent, 70%, black);
@@ -125,8 +125,73 @@
     margin-top: -150px !important;
 }
 
-/* Remora Section */
-#remora {
+.ball_container {
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 1200px;
+    left: calc(150px - (75px/2));
+    width: fit-content;
+    gap: 20px;
+}
+
+.ball {
+    align-content: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px rgba(38, 118, 255, 0.7) solid;
+    box-shadow: 0px 0px 16px rgba(38, 118, 255, 0.7);
+}
+
+.ball#tech1 {
+    animation: floating 5.5s ease-in-out infinite;
+}
+.ball#tech2 {
+    animation: floating 6.5s ease-in-out infinite;
+}
+.ball#tech3 {
+    animation: floating 6s ease-in-out infinite;
+}
+
+.line {
+    position: absolute;
+    left: 150px;
+    width: 5px;
+    height: 1150px;
+    background-color: white;
+}
+
+.line.part2 {
+    top: 1500px;
+}
+
+.short_line {
+    position: absolute;
+    top: 1500px;
+    left: 150px;
+    width: 5px;
+    height: 200px;
+    background-color: white;
+}
+
+.detail_section {
+    height: 100vh;
     color: white;
     padding: 20px;
+}
+
+/* Animations */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(3px);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
 }

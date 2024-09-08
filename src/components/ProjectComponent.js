@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import nullimg from '../imgs/null.jpeg';
 import DOMPurify from 'dompurify';
 
@@ -11,51 +10,8 @@ function ProjectComponent({name = "no name",
 }) {
     const sanitizedDescription = DOMPurify.sanitize(description);
 
-    useEffect(() => {
-        // Focus Effect //
-        const target_imgs = document.querySelectorAll(".project_images");
-        const handleImgClick = (e) => {
-            const target_img = e.target;
-            target_img.classList.contains("focus") ? target_img.classList.remove("focus") : target_img.classList.add("focus");
-        }
-
-        target_imgs.forEach((e) => {
-            e.addEventListener('click', handleImgClick);
-        });
-        
-        // Display Project Content //
-        const target_project_heros = document.querySelectorAll(".project_hero_image");
-        const target_project_displays = document.querySelectorAll(".project_display")
-        const handleHeroClick = (e) => {
-            const heroImgObj = e.target;
-
-            target_project_displays.forEach((dis) => {
-                if (dis.id === heroImgObj.id) {
-                    dis.classList.contains("show_right") ? dis.classList.remove("show_right") : dis.classList.add("show_right");
-                    heroImgObj.classList.contains("shrink") ? heroImgObj.classList.remove("shrink") : heroImgObj.classList.add("shrink");
-                }
-            })
-        }
-
-        target_project_heros.forEach((e) => {
-            e.addEventListener('click', handleHeroClick);
-        })
-
-        // Cleanup //
-        return () => {
-            target_imgs.forEach((e) => {
-                e.removeEventListener('click', handleImgClick);
-            });
-
-            target_project_heros.forEach((e) => {
-                e.removeEventListener('click', handleHeroClick);
-            })
-        };
-    }, []);
-
-
     return(
-        <section id="remora">
+        <section className="detail_section">
             <div id={name} className="project_hero">
                 <h1>{name}</h1>
                 <img id={name} alt={name} title={name} className="project_hero_image" src={header_image} />

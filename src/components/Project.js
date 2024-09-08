@@ -9,6 +9,8 @@ import remora_ad from '../imgs/remoraAd.png';
 import remora_icon from '../imgs/RemoraAppIcon.png';
 import remora_demo from '../imgs/videos/remorademo.gif';
 
+import ptp_logo from '../imgs/protectthepark.png';
+
 function Project() {
 
     useEffect(() => {
@@ -28,11 +30,54 @@ function Project() {
                 eyes.textContent = 'O_O';
             }, 800);
         }
-    
+
         blink(); // Initial call to start the blinking immediately
         const intervalId = setInterval(blink, 4000); // Repeat the blinking sequence every 4 seconds
     
-        return () => clearInterval(intervalId); // Cleanup interval on component unmount
+        // Focus Effect //
+        const target_imgs = document.querySelectorAll(".project_images");
+        const handleImgClick = (e) => {
+            const target_img = e.target;
+            target_img.classList.contains("focus") ? target_img.classList.remove("focus") : target_img.classList.add("focus");
+        }
+
+        target_imgs.forEach((e) => {
+            e.addEventListener('click', handleImgClick);
+        });
+        
+        // Display Project Content //
+        const target_project_heros = document.querySelectorAll(".project_hero_image");
+        const target_project_displays = document.querySelectorAll(".project_display")
+        const handleHeroClick = (e) => {
+            const heroImgObj = e.target;
+            console.log("CLIK " + heroImgObj.id);
+
+            target_project_displays.forEach((dis) => {
+                if (dis.id === heroImgObj.id) {
+                    dis.classList.contains("show_right") ? dis.classList.remove("show_right") : dis.classList.add("show_right");
+                    heroImgObj.classList.contains("shrink") ? heroImgObj.classList.remove("shrink") : heroImgObj.classList.add("shrink");
+                }
+            })
+        }
+
+        console.log("hero length: " + target_project_heros.length);
+        target_project_heros.forEach((e) => {
+            e.addEventListener('click', (e) => {handleHeroClick(e)});
+        });
+
+        // Cleanup //
+        return () => {
+            clearInterval(intervalId); // Cleanup interval on component unmount
+            
+            target_imgs.forEach((e) => {
+                e.removeEventListener('click', handleImgClick);
+            });
+
+            target_project_heros.forEach((e) => {
+                e.removeEventListener('click', handleHeroClick);
+            })
+        };
+
     }, []);
     
     useEffect(() => {
@@ -58,6 +103,15 @@ function Project() {
     return (
         <div className="project_section">
             <div id="container">
+                <div className="extra_container">
+                    <div className="line"></div>
+                    <div className="ball_container">
+                        <div id="tech1" className="ball">Swift</div>
+                        <div id="tech2" className="ball">AR Kit</div>
+                        <div id="tech3" className="ball">Blender</div>
+                    </div>
+                    <div className="line part2"></div>
+                </div>
                 <div id="projectheader" className="project_header">
                     <div className="project_header_text">
                         Peep the Projects
@@ -76,6 +130,17 @@ function Project() {
                     virtual pet. Remora is designed to <b>make hydration fun and engaging!</b>'
                     titles={["App Icon","Mockup","Demo"]}
                     image_shapes={["","","rectangle"]}
+                    supporting_images={[remora_icon, remora_ad, remora_demo]}
+                    />
+                    <ProjectComponent name="Protect The Park" 
+                    header_image={ptp_logo}
+                    description='A group of my friends and I created this game when we were making 
+                    a project in our high school iOS developement app where we learned the basics 
+                    of app developement. We created it in a matter of a weeks, including the planning 
+                    process, and the brainstorming and such, and we developed the app using Swift and 
+                    XCode.'
+                    titles={["App Icon","Mockup","Demo"]}
+                    image_shapes={["","",""]}
                     supporting_images={[remora_icon, remora_ad, remora_demo]}
                     />
                 </div>
