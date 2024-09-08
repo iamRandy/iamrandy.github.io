@@ -7,9 +7,9 @@ function switchScreens(target) {
         document.getElementById("projects").classList.remove("hiddenSection");
         document.getElementById("projects").classList.add("showProjects");
     } else {
-        document.getElementById("path").classList.add("hiddenSection");
+        document.getElementById("path").style.display = "none";
         document.getElementById("gallery").classList.remove("hiddenSection");
-        document.body.style.backgroundColor = "gray";
+        document.getElementById("gallery").classList.add("showGallery");
     }
 }
 
@@ -66,7 +66,7 @@ function PathSection() {
                 if (project)
                     project.classList.add("hiddenSection");
                 createMotionEffect(10, "left");
-                getTransition.style.setProperty('--anim-transition', 'gray');
+                getTransition.style.setProperty('--anim-transition', 'black');
             }
             
             setTimeout(function() { // Closing

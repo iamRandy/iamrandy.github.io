@@ -211,6 +211,10 @@ body {
     display: inline;
 }
 
+#gallery {
+    background-color: black;
+}
+
 .interactive_components:hover {
     transform: scale(1.1);
 }
@@ -219,7 +223,7 @@ body {
 
 /* Gallery Section */
 .banner {
-    background-color: gray;
+    background-color: black;
 }
 
 /* Wrapper and Container */
@@ -388,6 +392,10 @@ body {
     animation: projectSection 1.25s linear forwards !important;
 }
 
+.showGallery {
+    animation: gallerySection 1.25s linear forwards !important;
+}
+
 .projectTransition {
     animation: switchBackground 4s ease-in-out forwards !important;
 }
@@ -474,6 +482,18 @@ body {
     }
     25%, 100% {
         transform: translateX(0vw);
+    }
+}
+
+@keyframes gallerySection {
+    0% {
+        transform: translateX(-100vw);
+    }
+    15% {
+        transform: translateX(5vw);
+    }
+    25%, 100% {
+        transform: translateX(0);
     }
 }
 
