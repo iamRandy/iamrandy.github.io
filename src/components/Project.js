@@ -14,6 +14,23 @@ import ptp_logo from '../imgs/protectthepark.png';
 function Project() {
 
     useEffect(() => {
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    console.log("WORKKKJDSLKFJSL:DJ");
+                    entry.target.classList.add("showRight");
+                } else {
+                    console.log("part2");
+                    entry.target.classList.remove("showRight");
+                }
+            });
+        });
+        
+        const hiddenElements = document.querySelectorAll(".hideRight");
+        hiddenElements.forEach((el) => observer.observe(el));        
+
+
         const eyes = document.getElementById("eyes");
     
         function blink() {
@@ -60,7 +77,6 @@ function Project() {
             })
         }
 
-        console.log("hero length: " + target_project_heros.length);
         target_project_heros.forEach((e) => {
             e.addEventListener('click', (e) => {handleHeroClick(e)});
         });
@@ -68,7 +84,8 @@ function Project() {
         // Cleanup //
         return () => {
             clearInterval(intervalId); // Cleanup interval on component unmount
-            
+            hiddenElements.forEach((el) => observer.unobserve(el));
+
             target_imgs.forEach((e) => {
                 e.removeEventListener('click', handleImgClick);
             });
@@ -78,25 +95,6 @@ function Project() {
             })
         };
 
-    }, []);
-    
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("showRight");
-                } else {
-                    entry.target.classList.remove("showRight");
-                }
-            });
-        });
-        
-        const hiddenElements = document.querySelectorAll(".hideRight");
-        hiddenElements.forEach((el) => observer.observe(el));        
-    
-        return () => {
-            hiddenElements.forEach((el) => observer.unobserve(el));
-        };
     }, []);
     
 
