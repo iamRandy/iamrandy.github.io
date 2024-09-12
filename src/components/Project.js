@@ -67,7 +67,6 @@ function Project() {
         const target_project_displays = document.querySelectorAll(".project_display")
         const handleHeroClick = (e) => {
             const heroImgObj = e.target;
-            console.log("CLIK " + heroImgObj.id);
 
             target_project_displays.forEach((dis) => {
                 if (dis.id === heroImgObj.id) {
