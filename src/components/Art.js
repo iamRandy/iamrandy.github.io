@@ -14,8 +14,7 @@ function Art () {
     useEffect(() => {
         const overlayContainer = document.getElementById("overlayContainer");
         const overlay = document.getElementById("overlay");
-        if (!overlayContainer) return;
-    
+        if (!overlayContainer) {console.log("overlay not found"); return;}
         const handleMouseMove = (e) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
@@ -34,7 +33,6 @@ function Art () {
     
         const handleClick = (e) => {
             try {
-                console.log(overlayContainer.style.display);
                 if (typeof(e.target.className) != "string"
                 || !overlayContainer.style.display === "none") return;
                 const classes = e.target.className.split(' ');

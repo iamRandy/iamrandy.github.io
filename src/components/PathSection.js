@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 
 function switchScreens(target) {
     if (target === "project") {
-        document.getElementById("path").style.display = "none";
-        document.getElementById("projects").style.display = "inline";
-        document.getElementById("projects").classList.add("showProjects")
+        document.getElementById("path").classList.add("hiddenSection");
+        document.getElementById("projects").classList.remove("hiddenSection");
+        document.getElementById("projects").classList.add("showProjects");
     } else {
-        document.getElementById("path").style.display = "none";
-        document.getElementById("gallery").style.display = "inline";
+        document.getElementById("path").classList.add("hiddenSection");
+        document.getElementById("gallery").classList.remove("hiddenSection");
         document.getElementById("gallery").classList.add("showGallery");
     }
 }
@@ -32,7 +32,7 @@ function createMotionEffect(num, direction) {
 }
 
 function PathSection() {
-    const [pressed, setPressed] = useState(false);
+    const [cooldown, setCooldown] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -48,51 +48,65 @@ function PathSection() {
         const hiddenElements = document.querySelectorAll(".hide");
         hiddenElements.forEach((el) => observer.observe(el));
         
-        const buttons = document.querySelectorAll(".pathSelect");
+        // const buttons = document.querySelectorAll(".pathSelect");
         const project = document.getElementById("projectSelect");
         const gallery = document.getElementById("gallerySelect");
         const handleClick = (element) => {
-            const buttonClicked = element.id;
-            element.classList.add("clicked");
-            document.body.classList.add("projectTransition");
+            const buttonClicked = element.target;
+            if (!buttonClicked.classList.contains("pathSelect")) return;
+
+            if (!cooldown) {
+                setCooldown(true);
+                buttonClicked.classList.add("clicked");
+                document.body.classList.add("projectTransition");
+        
+                const getTransition = document.querySelector(".projectTransition");
+                if (buttonClicked.id === "projectSelect") {
+                    if (gallery)
+                        gallery.classList.add("hiddenSection");
+                    createMotionEffect(20, "right");
+                    getTransition.style.setProperty('--anim-transition', 'white');
+                } else {
+                    if (project)
+                        project.classList.add("hiddenSection");
+                    createMotionEffect(20, "left");
+                    getTransition.style.setProperty('--anim-transition', 'black');
+                }
+                
+                setTimeout(function() { // Closing
+                    const animArea = document.querySelector(".animationContainer");
+                    const fxArray = document.querySelectorAll(".animcomponent");
+                    if (!fxArray || !animArea) return;
     
-            const getTransition = document.querySelector(".projectTransition");
-            if (buttonClicked === "projectSelect") {
-                if (gallery)
-                    gallery.style.display = "none";
-                createMotionEffect(10, "right");
-                getTransition.style.setProperty('--anim-transition', 'white');
+                    fxArray.forEach(fx => {
+                        animArea.removeChild(fx); 
+                    });
+    
+                    buttonClicked.id === "projectSelect" ? switchScreens("project") : switchScreens("gallery");
+                    project.classList.contains("hiddenSection") ? project.classList.remove("hiddenSection") : gallery.classList.remove("hiddenSection");
+                    buttonClicked.classList.remove("clicked");
+                    setCooldown(false);
+    
+                }, 4000);
             } else {
-                if (project)
-                    project.style.display = "none";
-                createMotionEffect(10, "left");
-                getTransition.style.setProperty('--anim-transition', 'black');
+                console.error("Cooldown in effect, please wait.");
+                return;
             }
-            
-            setTimeout(function() {
-                buttonClicked === "projectSelect" ? switchScreens("project") : switchScreens("gallery");
-            }, 4000);
         };
-    
-        if (!pressed) {
-            buttons.forEach(element => {
-                element.addEventListener('click', () => handleClick(element));
-            });
-            setPressed(true);
-        }
-    
+        
         // Cleanup
+        const parentElement = document.getElementById("parent_element");
+        parentElement.addEventListener('click', handleClick);
+
         return () => {
-            buttons.forEach(element => {
-                element.removeEventListener('click', () => handleClick(element));
-            });
+            parentElement.removeEventListener('click', handleClick)
             hiddenElements.forEach((el) => observer.unobserve(el));
         };
-    }, [pressed]);    
+    }, [cooldown]);    
 
 
     return (
-        <div className="grid gap-x-48 grid-cols-2 h-screen bg-transparent relative">
+        <div id="parent_element" className="grid gap-x-48 grid-cols-2 h-screen bg-transparent relative">
             <div className="animationContainer absolute flex flex-col gap-y-10 h-full w-full pointer-events-none"></div>
             <div className="hide justify-self-end self-center">
                 <button id="projectSelect" className="pathSelect">

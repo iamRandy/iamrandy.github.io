@@ -1,26 +1,27 @@
 import '../App.css';
-import React, { useState, useEffect } from 'react';
-// import NavButton from './NavButton';
-import watersvg from '../imgs/svgs/watersvg.svg';
-import controllersvg from '../imgs/svgs/controller.svg';
-import remoraad from '../imgs/remoraAd.png';
-import remorademo from '../imgs/videos/remorademo.gif';
-import remorademo2 from '../imgs/videos/remorademo2.gif';
+import '../styles/projectstyles.css';
+import React, { useEffect } from 'react';
+import ProjectComponent from '../components/ProjectComponent.js';
+
+// Images
+import remora_logo from '../imgs/remoraLogo.jpeg';
+import remora_ad from '../imgs/remoraAd.png';
+import remora_icon from '../imgs/RemoraAppIcon.png';
+import remora_demo from '../imgs/videos/remorademo.gif';
+
+import ptp_logo from '../imgs/protectthepark.png';
 
 function Project() {
-    const [selectedInput, setSelectedInput] = useState('c1');
-
-    const handleInputChange = (event) => {
-        setSelectedInput(event.target.id);
-    };
 
     useEffect(() => {
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                console.log(entry)
                 if (entry.isIntersecting) {
+                    console.log("WORKKKJDSLKFJSL:DJ");
                     entry.target.classList.add("showRight");
                 } else {
+                    console.log("part2");
                     entry.target.classList.remove("showRight");
                 }
             });
@@ -28,101 +29,117 @@ function Project() {
         
         const hiddenElements = document.querySelectorAll(".hideRight");
         hiddenElements.forEach((el) => observer.observe(el));        
-    })
+
+
+        const eyes = document.getElementById("eyes");
+    
+        function blink() {
+            setTimeout(() => {
+                eyes.textContent = '-_-';
+            }, 200);
+            setTimeout(() => {
+                eyes.textContent = 'O_O';
+            }, 400);
+            setTimeout(() => {
+                eyes.textContent = '-_-';
+            }, 600);
+            setTimeout(() => {
+                eyes.textContent = 'O_O';
+            }, 800);
+        }
+
+        blink(); // Initial call to start the blinking immediately
+        const intervalId = setInterval(blink, 4000); // Repeat the blinking sequence every 4 seconds
+    
+        // Focus Effect //
+        const target_imgs = document.querySelectorAll(".project_images");
+        const handleImgClick = (e) => {
+            const target_img = e.target;
+            target_img.classList.contains("focus") ? target_img.classList.remove("focus") : target_img.classList.add("focus");
+        }
+
+        target_imgs.forEach((e) => {
+            e.addEventListener('click', handleImgClick);
+        });
+        
+        // Display Project Content //
+        const target_project_heros = document.querySelectorAll(".project_hero_image");
+        const target_project_displays = document.querySelectorAll(".project_display")
+        const handleHeroClick = (e) => {
+            const heroImgObj = e.target;
+
+            target_project_displays.forEach((dis) => {
+                if (dis.id === heroImgObj.id) {
+                    dis.classList.contains("show_right") ? dis.classList.remove("show_right") : dis.classList.add("show_right");
+                    heroImgObj.classList.contains("shrink") ? heroImgObj.classList.remove("shrink") : heroImgObj.classList.add("shrink");
+                }
+            })
+        }
+
+        target_project_heros.forEach((e) => {
+            e.addEventListener('click', (e) => {handleHeroClick(e)});
+        });
+
+        // Cleanup //
+        return () => {
+            clearInterval(intervalId); // Cleanup interval on component unmount
+            hiddenElements.forEach((el) => observer.unobserve(el));
+
+            target_imgs.forEach((e) => {
+                e.removeEventListener('click', handleImgClick);
+            });
+
+            target_project_heros.forEach((e) => {
+                e.removeEventListener('click', handleHeroClick);
+            })
+        };
+
+    }, []);
+    
 
     return (
-        <div className="flex w-fit">
-            <div id="project container">
-                <div id="projectheader" className="font-extrabold text-5xl my- ml-48 uppercase">
-                    Peep the Projects
-                    *eye blinking thingy*
-                
+        <div className="project_section">
+            <div id="container">
+                <div className="extra_container">
+                    <div className="line"></div>
+                    <div className="ball_container">
+                        <div id="tech1" className="ball">Swift</div>
+                        <div id="tech2" className="ball">AR Kit</div>
+                        <div id="tech3" className="ball">Blender</div>
+                    </div>
+                    <div className="line part2"></div>
                 </div>
-                <div id="content" className="bg-white wrapper"> 
-                    <div className="container">
-                        <input type="radio" name="slide" id="c1" defaultChecked onChange={handleInputChange} />
-                        <label htmlFor="c1" className="card">
-                            <div className="row">
-                                <div className="icon">
-                                    <img src={watersvg} alt="1"></img>
-                                </div>
-                                <div className="description">
-                                    <h4 className="font-bold">Remora</h4>
-                                    <p>iOS Application</p>
-                                </div>
-                            </div>
-                        </label>
-                        <input type="radio" name="slide" id="c2" onChange={handleInputChange} />
-                        <label htmlFor="c2" className="card">
-                            <div className="row">
-                                <div className="icon"><img src={controllersvg} alt="2"></img></div>
-                                <div className="description">
-                                    <h4 className="font-bold">Protect The Park</h4>
-                                    <p>iOS Application</p>
-                                </div>
-                            </div>
-                        </label>
-                        <input type="radio" name="slide" id="c3" onChange={handleInputChange} />
-                        <label htmlFor="c3" className="card">
-                            <div className="row">
-                                <div className="icon">3</div>
-                                <div className="description">
-                                    <h4 className="font-bold">Mrs. Kelly's Tea Website</h4>
-                                    <p>Tea Website Mockup on Figma </p>
-                                </div>
-                            </div>
-                        </label>
-                        <input type="radio" name="slide" id="c4" onChange={handleInputChange}/>
-                        <label htmlFor="c4" className="card">
-                            <div className="row">
-                                <div className="icon">4</div>
-                                <div className="description">
-                                    <h4 className="font-bold">Eggs and Stuff</h4>
-                                    <p>iOS Application Mockup</p>
-                                </div>
-                            </div>
-                        </label>
+                <div id="projectheader" className="project_header">
+                    <div className="project_header_text">
+                        Peep the Projects
+                        <div id="eyes" className='normal-case'>O_O</div>
                     </div>
                 </div>
-                <div className="extraInfo p-5 rounded-xl ml-20 mr-6 w-11/12 h-11/12">
-                    {selectedInput === 'c1' && (
-                        <div className="descArea">
-                            <div className="row1 flex pt-10 hideRight">
-                                <p>
-                                    <h1>ABOUT REMORA</h1>
-                                    Staying hydrated can be a challenge, especially for busy students.
-                                    <br/><br/>While there are water reminder apps, they often lack the 
-                                    <b> motivation</b> factor. <b>That’s where Remora comes in.</b>
-                                </p>
-                                <div className="bg-contain pl-10">
-                                    <img src={remoraad} alt="remora ad"/>
-                                </div>
-                            </div>
-                            <div className="row2 flex pt-12 hideRight">
-                                <div className="bg-contain pr-5">
-                                    <img src={remorademo} style={{width: "481px"}} alt="remora demo"/>
-                                </div>
-                                <div className="bg-contain">
-                                    <img src={remorademo2} alt="remora demo 2"/>
-                                </div>
-                                <p className="pl-10">
-                                    We’ve created an app that not only reminds you to drink water, 
-                                    but also provides a unique incentive - a pet Remora.<br/><br/>By drinking 
-                                    water, you’re not just taking care of yourself, but also your 
-                                    virtual pet. Remora is designed to <b>make hydration fun and engaging!</b>
-                                </p>
-                            </div>
-                        </div> 
-                    )}
-                    {selectedInput === 'c2' && (
-                        <div className="descArea"><p>c2 is checked hehe</p></div> 
-                    )}
-                    {selectedInput === 'c3' && (
-                        <div className="descArea"><p>c3 is checked hehe</p></div> 
-                    )}
-                    {selectedInput === 'c4' && (
-                        <div className="descArea"><p>c4 is checked hehe</p></div> 
-                    )}
+                <div id="content" className="project_content"> 
+                    <ProjectComponent name="REMORA" 
+                    header_image={remora_logo}
+                    description='Staying hydrated can be a challenge, especially for busy students. 
+                    While there are water reminder apps, they often lack the <b>motivation</b> factor. 
+                    <b>That’s where Remora comes in.</b>
+                    <br><br>We’ve created an app that not only reminds you to drink water, 
+                    but also provides a unique incentive - a pet Remora.<br/><br/>By drinking 
+                    water, you’re not just taking care of yourself, but also your 
+                    virtual pet. Remora is designed to <b>make hydration fun and engaging!</b>'
+                    titles={["App Icon","Mockup","Demo"]}
+                    image_shapes={["","","rectangle"]}
+                    supporting_images={[remora_icon, remora_ad, remora_demo]}
+                    />
+                    <ProjectComponent name="Protect The Park" 
+                    header_image={ptp_logo}
+                    description='A group of my friends and I created this game when we were making 
+                    a project in our high school iOS developement app where we learned the basics 
+                    of app developement. We created it in a matter of a weeks, including the planning 
+                    process, and the brainstorming and such, and we developed the app using Swift and 
+                    XCode.'
+                    titles={["App Icon","Mockup","Demo"]}
+                    image_shapes={["","",""]}
+                    supporting_images={[remora_icon, remora_ad, remora_demo]}
+                    />
                 </div>
             </div>
         </div>
