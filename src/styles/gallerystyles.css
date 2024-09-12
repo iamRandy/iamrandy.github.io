@@ -35,8 +35,8 @@
 .overlayContainer {
     position: absolute;
     display: flex;
-    justify-content: end;
     z-index: 10;
+    justify-content: end;
     background-color: rgba(0, 0, 0, 0.5);
     height: 90vh;
     width: 100%;
@@ -53,7 +53,7 @@
 }
 
 .overlayContainer::before {
-    z-index: 10;
+    /* z-index: 10; */
     content: "some description";
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
@@ -130,17 +130,17 @@
     padding-left: 5px;
     pointer-events: none !important;
     font-size: 17px !important;
-    color: white;
+    color: black;
     display: flex;
     align-items: flex-end;
     height: 320px;
     width: 100%;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.15);
+    position: absolute;
+    background-color: white;
     left: 0;
-    bottom: 0px;
-    border-radius: 20px 0 20px 0;
+    bottom: 0;
     z-index: -1;
+    border-radius: 20px 0 20px 0;
     transition: bottom 1s ease-out;
 }
 

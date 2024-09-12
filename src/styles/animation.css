@@ -219,13 +219,6 @@ body {
     transform: scale(1.1);
 }
 
-
-
-/* Gallery Section */
-.banner {
-    background-color: black;
-}
-
 /* Wrapper and Container */
 .wrapper {
     width: fit-content;
