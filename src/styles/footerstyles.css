@@ -1,0 +1,41 @@
+.footer_main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.footer_text_content {
+    position: relative;
+    color: white;
+}
+
+.footer_button_content {
+    position: relative;
+    display: flex;
+    gap: 5px;
+}
+
+.linkButton.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkButton.footer svg {
+    transition: transform .1s ease-in-out;
+}
+
+.linkButton.footer svg:hover {
+    transform: scale(1.1);
+}
+
+.footer_button_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
