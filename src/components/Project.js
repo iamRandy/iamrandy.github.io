@@ -126,7 +126,7 @@ function Project() {
                     In addition, I developed and optimized the chatbot to handle over 100 queries by
                     clients and employees, <b>working in the backend as well.</b>'
                     titles={["My keycard for Willis Tower","Chicago","Me and a couple other interns"]}
-                    image_shapes={["","rectangle",""]}
+                    image_shapes={["","",""]}
                     supporting_images={[abbott_tag, chicago_pic, intern_pic]}
                     technologies={["Python", "React", "Streamlit", "TypeScript", "Postgres"]}
                     theme="white"
