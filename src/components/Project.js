@@ -9,7 +9,9 @@ import remora_ad from '../imgs/remoraAd.png';
 import remora_icon from '../imgs/RemoraAppIcon.png';
 import remora_demo from '../imgs/videos/remorademo.gif';
 
-import ptp_logo from '../imgs/protectthepark.png';
+import ptp_logo from '../imgs/protecttheparkicon.png';
+import ptp_gameplay from '../imgs/protecttheparkgameplay.jpeg';
+import ptp_startscreen from '../imgs/protectthepark.png';
 
 function Project() {
 
@@ -100,45 +102,40 @@ function Project() {
     return (
         <div className="project_section">
             <div id="container">
-                <div className="extra_container">
-                    <div className="line"></div>
-                    <div className="ball_container">
-                        <div id="tech1" className="ball">Swift</div>
-                        <div id="tech2" className="ball">AR Kit</div>
-                        <div id="tech3" className="ball">Blender</div>
-                    </div>
-                    <div className="line part2"></div>
-                </div>
                 <div id="projectheader" className="project_header">
                     <div className="project_header_text">
-                        Peep the Projects
+                        Peep the Experience
                         <div id="eyes" className='normal-case'>O_O</div>
                     </div>
                 </div>
                 <div id="content" className="project_content"> 
                     <ProjectComponent name="REMORA" 
-                    header_image={remora_logo}
+                    header_image={remora_icon}
                     description='Staying hydrated can be a challenge, especially for busy students. 
                     While there are water reminder apps, they often lack the <b>motivation</b> factor. 
                     <b>That’s where Remora comes in.</b>
-                    <br><br>We’ve created an app that not only reminds you to drink water, 
+                    <br/><br/>We’ve created an app that not only reminds you to drink water, 
                     but also provides a unique incentive - a pet Remora.<br/><br/>By drinking 
                     water, you’re not just taking care of yourself, but also your 
                     virtual pet. Remora is designed to <b>make hydration fun and engaging!</b>'
-                    titles={["App Icon","Mockup","Demo"]}
+                    titles={["Logo","Mockup","Demo"]}
                     image_shapes={["","","rectangle"]}
-                    supporting_images={[remora_icon, remora_ad, remora_demo]}
+                    supporting_images={[remora_logo, remora_ad, remora_demo]}
+                    technologies={["Swift", "AR Kit", "XCode"]}
+                    theme="white"
                     />
                     <ProjectComponent name="Protect The Park" 
                     header_image={ptp_logo}
                     description='A group of my friends and I created this game when we were making 
-                    a project in our high school iOS developement app where we learned the basics 
-                    of app developement. We created it in a matter of a weeks, including the planning 
-                    process, and the brainstorming and such, and we developed the app using Swift and 
-                    XCode.'
-                    titles={["App Icon","Mockup","Demo"]}
+                    a project in our high school <b>iOS developement class</b>. 
+                    <br/><br/> 
+                    We created it in a matter of a 4 weeks, this included drawing up the art, the planning process, and the programming. We developed the app using <b>Swift and 
+                    XCode.</b> It was an awesome experience, as we were able to learn the basics of iOS developement and how to ship a finished app!'
+                    titles={["Start Screen","Gameplay!"]}
                     image_shapes={["","",""]}
-                    supporting_images={[remora_icon, remora_ad, remora_demo]}
+                    supporting_images={[ptp_startscreen, ptp_gameplay]}
+                    technologies={["Swift", "XCode"]}
+                    theme="black"
                     />
                 </div>
             </div>
