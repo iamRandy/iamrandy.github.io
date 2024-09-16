@@ -2,6 +2,8 @@
 import '../styles/gallerystyles.css';
 import { useEffect } from 'react';
 
+import medrawing from '../imgs/videos/medrawing.gif';
+
 function Art () {
 
     const handleClick = () => {
@@ -73,6 +75,7 @@ function Art () {
 
             <div className="welcome text-white">
                 Welcome To My Gallery :)
+                <img src={medrawing} alt="me drawing"></img>
             </div>
 
             <div id="overlayContainer" className="overlayContainer hidden">
@@ -98,10 +101,10 @@ function Art () {
             </div>
             <div id="row2" className="row">
                 <div id="box4" className="threebox">
-                    <div className="caption"></div>
+                    <div className="caption" data-caption="I drew my friend's character"></div>
                 </div>
                 <div id="box5" className="largebox threebox">
-                    <div className="caption"></div>
+                    <div className="caption" data-caption="'Scattered Lions'"></div>
                 </div>
             </div>
 
