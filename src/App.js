@@ -3,7 +3,10 @@ import profile from './imgs/me.png';
 import PathSection from './components/PathSection.js';
 import Project from './components/Project.js';
 import Art from './components/Art.js';
+import Footer from './components/Footer.js';
 import { useEffect, useState } from 'react';
+
+import './styles/animation.css';
 
 function App() {
   // Home Button
@@ -16,22 +19,26 @@ function App() {
       const pathSection = document.getElementById("path");
       const projectSection = document.getElementById("projects");
       const gallerySection = document.getElementById("gallery");
-      if (!pathSection || !projectSection || !gallerySection) {
+      const footerSection = document.getElementById("footer");
+      if (!pathSection || !projectSection || !gallerySection || !footerSection) {
         console.error("could not find a section");
         return;
       }
       if (!projectSection.classList.contains("hiddenSection")) {
         projectSection.classList.add("hiddenSection");
-        pathSection.classList.remove("hiddenSection");
       } 
       if (!gallerySection.classList.contains("hiddenSection")) {
         gallerySection.classList.add("hiddenSection");
-        pathSection.classList.remove("hiddenSection");
+      }
+      if (!footerSection.classList.contains("hiddenSection")) {
+        footerSection.classList.add("hiddenSection");
       }
       if (document.body.classList.contains("projectTransition")) {
         mainBody.classList.remove("projectTransition");
         document.body.style.backgroundColor = "black";
       }
+      
+      pathSection.classList.remove("hiddenSection");
     }
 
     homeButton.addEventListener('click', resetToHome);
@@ -144,8 +151,8 @@ function App() {
             </div>
           </div>
 
-          
         </div>
+
       </section>
       <section id="path">
         <PathSection />
@@ -157,6 +164,9 @@ function App() {
         <Art />
       </section>
 
+      <section id="footer" className="hiddenSection"> 
+        <Footer />
+      </section>
     </div>
   );
 }

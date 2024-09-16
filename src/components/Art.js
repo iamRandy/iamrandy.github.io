@@ -106,7 +106,7 @@ function Art () {
             </div>
 
             <div id="outro">
-                <p>Pretty cool stuff huh :)</p>
+                <p>Pretty cool stuff huh?</p>
                 <p>You can find more of my work on my instagram @<a target="_blank" rel="noreferrer" href="https://www.instagram.com/w1ckd_/"><b>w1ckd_</b></a></p>
             </div>
         

@@ -229,13 +229,6 @@ body {
     justify-content: center;
 }
 
-/* .container {
-    height: 70vh;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-} */
-
 /* Card Styles */
 .card {
     width: 120px;

@@ -51,6 +51,7 @@ function PathSection() {
         // const buttons = document.querySelectorAll(".pathSelect");
         const project = document.getElementById("projectSelect");
         const gallery = document.getElementById("gallerySelect");
+        const footerSection = document.getElementById("footer");
         const handleClick = (element) => {
             const buttonClicked = element.target;
             if (!buttonClicked.classList.contains("pathSelect")) return;
@@ -86,6 +87,7 @@ function PathSection() {
                     project.classList.contains("hiddenSection") ? project.classList.remove("hiddenSection") : gallery.classList.remove("hiddenSection");
                     buttonClicked.classList.remove("clicked");
                     setCooldown(false);
+                    if (footerSection.classList.contains("hiddenSection")) footerSection.classList.remove("hiddenSection");
     
                 }, 4000);
             } else {

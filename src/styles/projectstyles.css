@@ -11,14 +11,14 @@
 }
 
 .project_section {
-    height: calc(100vh * 1.5);
+    height: 410vh;
 }
 
 .project_header {
     display: flex;
     height: 100vh;
     justify-content: center;
-
+    align-items: center;
     text-align: center;
     font-weight: bolder;
     background-image: linear-gradient(transparent, 70%, black);
@@ -35,7 +35,7 @@
     object-fit: cover;
     position: absolute;
     transition: transform .2s ease-in-out;
-    border: black 2px solid;
+    border: var(--theme-color) 2px solid;
 }
 
 .project_images:hover {
@@ -65,9 +65,10 @@
     height: 400px;
     width: 400px;
     object-fit: cover;
-    position: relative;
+    position: absolute;
+    z-index: 1;
     left: calc(50vw - 200px);
-    top: -40px;
+    /* top: -40px; */
     border-radius: 10px;
     transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -76,7 +77,7 @@
     height: 200px;
     width: 200px;
     left: calc(50vw - 100px);
-    border: 5px white solid;
+    border: 5px var(--theme-color) solid;
 }
 
 .project_hero_image:hover {
@@ -87,10 +88,10 @@
 .project_hero h1 {
     position: relative; 
     z-index: 2;
-    margin-left: 20%;
+    margin-left: 15%;
     font-size: 30px;
     font-weight: bolder;
-    text-shadow: #00477b 1px 0 10px;
+    text-shadow: var(--theme-color) 0 0 25px !important;
 }
 
 .project_hero h1::before {
@@ -98,18 +99,29 @@
     content: '';
     height: 2px;
     width: 100px;
-    background-color: white;
+    background-color: var(--theme-color);
     position: absolute;
-    transform: translate(-10px, 50px);
+    transform: translate(-30px, 50px);
+}
+
+.project_hero {
+    position: relative;
 }
 
 .project_display {
     display: flex;
     justify-content: center;
-    gap: 20px;
     position: relative;
+    margin-top: 250px;
+    gap: 20px;
     right: 5%;
     transition: transform .5s ease-in-out, opacity 1s ease-in-out;
+}
+
+.extra_container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
 }
 
 .project_text {
@@ -127,25 +139,30 @@
 
 .ball_container {
     display: flex;
-    font-weight: bold;
     flex-direction: column;
-    color: white;
+    align-items: center;
     text-align: center;
-    position: relative;
-    top: 1200px;
-    left: calc(150px - (75px/2));
+    left: calc(15% + 10px);
+    top: 10%;
     width: fit-content;
     gap: 20px;
+    position: absolute;
+
 }
 
 .ball {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     align-content: center;
-    width: 75px;
-    height: 75px;
+    font-weight: bold;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     background-color: transparent;
-    border: 2px rgba(38, 118, 255, 0.7) solid;
-    box-shadow: 0px 0px 16px rgba(38, 118, 255, 0.7);
+    border: 2px var(--theme-color) solid;
+    box-shadow: 0px 0px 16px var(--theme-color);
+    position: relative;
 }
 
 .ball#tech1 {
@@ -157,32 +174,27 @@
 .ball#tech3 {
     animation: floating 6s ease-in-out infinite;
 }
-
-.line {
-    position: absolute;
-    left: 150px;
-    width: 5px;
-    height: 1150px;
-    background-color: white;
+.ball#tech4 {
+    animation: floating 6.25s ease-in-out infinite;
 }
-
-.line.part2 {
-    top: 1500px;
-}
-
-.short_line {
-    position: absolute;
-    top: 1500px;
-    left: 150px;
-    width: 5px;
-    height: 200px;
-    background-color: white;
+.ball#tech5 {
+    animation: floating 5s ease-in-out infinite;
 }
 
 .detail_section {
-    height: 100vh;
-    color: white;
+    height: 105%;
     padding: 20px;
+    position: relative;
+}
+
+.detail_section.black {
+    color: black;
+    background-color: white;
+}
+
+.detail_section.white {
+    color: white;
+    background-color: black;
 }
 
 /* Animations */
