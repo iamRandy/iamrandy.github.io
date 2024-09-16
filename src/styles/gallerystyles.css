@@ -40,7 +40,6 @@
     background-color: rgba(0, 0, 0, 0.5);
     height: 90vh;
     width: 100%;
-    top: 33%;
 }
 
 .overlay {
@@ -187,6 +186,10 @@
     font-size: larger;
     z-index: 1;
     margin: 200px 0 200px 0;
+}
+
+.welcome img {
+    width: 300px;
 }
 
 @keyframes beforeanim {
