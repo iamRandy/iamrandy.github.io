@@ -7,7 +7,7 @@ function ProjectComponent({name = "no name",
     supporting_images = [nullimg, nullimg, nullimg],
     titles = [null, null, null],
     image_shapes = ["", "", ""],
-    technologies = ["", "", ""],
+    technologies = ["", "", "", "", ""],
     theme = "black"
 }) {
     const sanitizedDescription = DOMPurify.sanitize(description);
@@ -25,6 +25,12 @@ function ProjectComponent({name = "no name",
                     )}
                     {technologies[2] && (
                         <div id="tech3" className="ball">{technologies[2]}</div>
+                    )}
+                    {technologies[3] && (
+                        <div id="tech4" className="ball">{technologies[3]}</div>
+                    )}
+                    {technologies[4] && (
+                        <div id="tech5" className="ball">{technologies[4]}</div>
                     )}
                 </div>
             </div>

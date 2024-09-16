@@ -13,6 +13,11 @@ import ptp_logo from '../imgs/protecttheparkicon.png';
 import ptp_gameplay from '../imgs/protecttheparkgameplay.jpeg';
 import ptp_startscreen from '../imgs/protectthepark.png';
 
+import abbott_tag from '../imgs/myabbottcard.JPG';
+import chicago_pic from '../imgs/meinchicago.gif';
+import willis_pic from '../imgs/willis.jpg';
+import intern_pic from '../imgs/meandinterns.JPG';
+
 function Project() {
 
     useEffect(() => {
@@ -109,7 +114,24 @@ function Project() {
                     </div>
                 </div>
                 <div id="content" className="project_content"> 
-                    <ProjectComponent name="REMORA" 
+                    <ProjectComponent name="Abbott AI Accelerator" 
+                    header_image={willis_pic}
+                    description='Developed, with the help of one of my talented coworkers, an 
+                    <b>AI assistant</b> for Abbott Laboratories during my internship in Chicago, IL!<br/><br/>
+                    Utilizing <b>Azure</b>, we hosted and created a chatbot that could assist
+                    customers and clients with any queries or questions they might have about any 
+                    Abbott product.<br/><br/>
+                    I was able to utilize a lot of skills, such as my <b>frontend skills in React and
+                    Web-Dev tools</b>, in order to build a user-friendly and attractive user interface.
+                    In addition, I developed and optimized the chatbot to handle over 100 queries by
+                    clients and employees, <b>working in the backend as well.</b>'
+                    titles={["My keycard for Willis Tower","Chicago","Me and a couple other interns"]}
+                    image_shapes={["","rectangle",""]}
+                    supporting_images={[abbott_tag, chicago_pic, intern_pic]}
+                    technologies={["Python", "React", "Streamlit", "TypeScript", "Postgres"]}
+                    theme="white"
+                    />
+                    <ProjectComponent name="Remora" 
                     header_image={remora_icon}
                     description='Staying hydrated can be a challenge, especially for busy students. 
                     While there are water reminder apps, they often lack the <b>motivation</b> factor. 
@@ -122,20 +144,22 @@ function Project() {
                     image_shapes={["","","rectangle"]}
                     supporting_images={[remora_logo, remora_ad, remora_demo]}
                     technologies={["Swift", "AR Kit", "XCode"]}
-                    theme="white"
+                    theme="black"
                     />
                     <ProjectComponent name="Protect The Park" 
                     header_image={ptp_logo}
                     description='A group of my friends and I created this game when we were making 
                     a project in our high school <b>iOS developement class</b>. 
                     <br/><br/> 
-                    We created it in a matter of a 4 weeks, this included drawing up the art, the planning process, and the programming. We developed the app using <b>Swift and 
-                    XCode.</b> It was an awesome experience, as we were able to learn the basics of iOS developement and how to ship a finished app!'
+                    We created it in a matter of a 4 weeks, this included drawing up the art, 
+                    the planning process, and the programming. We developed the app using <b>Swift and 
+                    XCode.</b><br/><br/>It was an awesome experience, as we were able to learn the basics of iOS 
+                    developement and how to ship a finished app!'
                     titles={["Start Screen","Gameplay!"]}
                     image_shapes={["","",""]}
                     supporting_images={[ptp_startscreen, ptp_gameplay]}
                     technologies={["Swift", "XCode"]}
-                    theme="black"
+                    theme="white"
                     />
                 </div>
             </div>

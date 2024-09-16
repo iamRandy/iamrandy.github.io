@@ -11,7 +11,7 @@
 }
 
 .project_section {
-    height: 300vh;
+    height: 410vh;
 }
 
 .project_header {
@@ -141,13 +141,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* color: white; */
     text-align: center;
     left: calc(15% + 10px);
     top: 10%;
     width: fit-content;
     gap: 20px;
     position: absolute;
+
 }
 
 .ball {
@@ -156,8 +156,8 @@
     align-items: center;
     align-content: center;
     font-weight: bold;
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     background-color: transparent;
     border: 2px var(--theme-color) solid;
@@ -174,9 +174,15 @@
 .ball#tech3 {
     animation: floating 6s ease-in-out infinite;
 }
+.ball#tech4 {
+    animation: floating 6.25s ease-in-out infinite;
+}
+.ball#tech5 {
+    animation: floating 5s ease-in-out infinite;
+}
 
 .detail_section {
-    height: 100%;
+    height: 105%;
     padding: 20px;
     position: relative;
 }
