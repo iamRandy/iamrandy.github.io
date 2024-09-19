@@ -104,7 +104,7 @@ function PathSection() {
 
         return () => {
             parentElement.removeEventListener('click', handleClick)
-            hiddenElements.forEach((el) => observer.unobserve(el));
+            hiddenElements.forEach((el) => observer.current.unobserve(el));
         };
     }, [cooldown]);    
 

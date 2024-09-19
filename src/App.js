@@ -111,8 +111,6 @@ function App() {
         }
         requestAnimationFrame(animate);
       }, delay);
-
-
     }
 
     for (let i = 0; i < 3; i++) {
