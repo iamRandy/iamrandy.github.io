@@ -1,5 +1,5 @@
 import '../App.css';
-import { useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 function switchScreens(target) {
     if (target === "project") {
@@ -33,9 +33,10 @@ function createMotionEffect(num, direction) {
 
 function PathSection() {
     const [cooldown, setCooldown] = useState(false);
+    const observer = useRef();
 
     useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
+        observer.current = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("show");
