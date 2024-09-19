@@ -37,18 +37,22 @@ function PathSection() {
     const observer = useRef();
 
     useEffect(() => {
-        observer.current = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                } else {
-                    entry.target.classList.remove("show");
-                }
+        if ('IntersectionObserver' in window) {
+            observer.current = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    } else {
+                        entry.target.classList.remove("show");
+                    }
+                });
             });
-        });
-        
-        const hiddenElements = document.querySelectorAll(".hide");
-        hiddenElements.forEach((el) => observer.current.observe(el));
+    
+            const hiddenElements = document.querySelectorAll(".hide");
+            hiddenElements.forEach((el) => observer.current.observe(el));
+        } else {
+            console.error("IntersectionObserver is not supported in this environment.");
+        }
         
         // const buttons = document.querySelectorAll(".pathSelect");
         const project = document.getElementById("projectSelect");
