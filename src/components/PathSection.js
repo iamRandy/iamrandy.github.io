@@ -33,6 +33,7 @@ function createMotionEffect(num, direction) {
 
 function PathSection() {
     const [cooldown, setCooldown] = useState(false);
+
     const observer = useRef();
 
     useEffect(() => {
@@ -47,7 +48,7 @@ function PathSection() {
         });
         
         const hiddenElements = document.querySelectorAll(".hide");
-        hiddenElements.forEach((el) => observer.observe(el));
+        hiddenElements.forEach((el) => observer.current.observe(el));
         
         // const buttons = document.querySelectorAll(".pathSelect");
         const project = document.getElementById("projectSelect");
