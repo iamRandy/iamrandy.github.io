@@ -50,66 +50,66 @@ function PathSection() {
     
             const hiddenElements = document.querySelectorAll(".hide");
             hiddenElements.forEach((el) => observer.current.observe(el));
+            // const buttons = document.querySelectorAll(".pathSelect");
+            const project = document.getElementById("projectSelect");
+            const gallery = document.getElementById("gallerySelect");
+            const footerSection = document.getElementById("footer");
+            const handleClick = (element) => {
+                const buttonClicked = element.target;
+                if (!buttonClicked.classList.contains("pathSelect")) return;
+    
+                if (!cooldown) {
+                    setCooldown(true);
+                    buttonClicked.classList.add("clicked");
+                    document.body.classList.add("projectTransition");
+            
+                    const getTransition = document.querySelector(".projectTransition");
+                    if (buttonClicked.id === "projectSelect") {
+                        if (gallery)
+                            gallery.classList.add("hiddenSection");
+                        createMotionEffect(20, "right");
+                        getTransition.style.setProperty('--anim-transition', 'white');
+                    } else {
+                        if (project)
+                            project.classList.add("hiddenSection");
+                        createMotionEffect(20, "left");
+                        getTransition.style.setProperty('--anim-transition', 'black');
+                    }
+                    
+                    setTimeout(function() { // Closing
+                        const animArea = document.querySelector(".animationContainer");
+                        const fxArray = document.querySelectorAll(".animcomponent");
+                        if (!fxArray || !animArea) return;
+        
+                        fxArray.forEach(fx => {
+                            animArea.removeChild(fx); 
+                        });
+        
+                        buttonClicked.id === "projectSelect" ? switchScreens("project") : switchScreens("gallery");
+                        project.classList.contains("hiddenSection") ? project.classList.remove("hiddenSection") : gallery.classList.remove("hiddenSection");
+                        buttonClicked.classList.remove("clicked");
+                        setCooldown(false);
+                        if (footerSection.classList.contains("hiddenSection")) footerSection.classList.remove("hiddenSection");
+        
+                    }, 4000);
+                } else {
+                    console.error("Cooldown in effect, please wait.");
+                    return;
+                }
+            
+            };
+            
+            // Cleanup
+            const parentElement = document.getElementById("parent_element");
+            parentElement.addEventListener('click', handleClick);
+    
+            return () => {
+                parentElement.removeEventListener('click', handleClick)
+                hiddenElements.forEach((el) => observer.current.unobserve(el));
+            };
         } else {
             console.error("IntersectionObserver is not supported in this environment.");
         }
-        
-        // const buttons = document.querySelectorAll(".pathSelect");
-        const project = document.getElementById("projectSelect");
-        const gallery = document.getElementById("gallerySelect");
-        const footerSection = document.getElementById("footer");
-        const handleClick = (element) => {
-            const buttonClicked = element.target;
-            if (!buttonClicked.classList.contains("pathSelect")) return;
-
-            if (!cooldown) {
-                setCooldown(true);
-                buttonClicked.classList.add("clicked");
-                document.body.classList.add("projectTransition");
-        
-                const getTransition = document.querySelector(".projectTransition");
-                if (buttonClicked.id === "projectSelect") {
-                    if (gallery)
-                        gallery.classList.add("hiddenSection");
-                    createMotionEffect(20, "right");
-                    getTransition.style.setProperty('--anim-transition', 'white');
-                } else {
-                    if (project)
-                        project.classList.add("hiddenSection");
-                    createMotionEffect(20, "left");
-                    getTransition.style.setProperty('--anim-transition', 'black');
-                }
-                
-                setTimeout(function() { // Closing
-                    const animArea = document.querySelector(".animationContainer");
-                    const fxArray = document.querySelectorAll(".animcomponent");
-                    if (!fxArray || !animArea) return;
-    
-                    fxArray.forEach(fx => {
-                        animArea.removeChild(fx); 
-                    });
-    
-                    buttonClicked.id === "projectSelect" ? switchScreens("project") : switchScreens("gallery");
-                    project.classList.contains("hiddenSection") ? project.classList.remove("hiddenSection") : gallery.classList.remove("hiddenSection");
-                    buttonClicked.classList.remove("clicked");
-                    setCooldown(false);
-                    if (footerSection.classList.contains("hiddenSection")) footerSection.classList.remove("hiddenSection");
-    
-                }, 4000);
-            } else {
-                console.error("Cooldown in effect, please wait.");
-                return;
-            }
-        };
-        
-        // Cleanup
-        const parentElement = document.getElementById("parent_element");
-        parentElement.addEventListener('click', handleClick);
-
-        return () => {
-            parentElement.removeEventListener('click', handleClick)
-            hiddenElements.forEach((el) => observer.current.unobserve(el));
-        };
     }, [cooldown]);    
 
 
