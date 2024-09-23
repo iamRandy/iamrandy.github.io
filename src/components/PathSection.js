@@ -31,7 +31,7 @@ function createMotionEffect(num, direction) {
     }
 }
 
-function PathSection() {
+const PathSection = () => {
     const [cooldown, setCooldown] = useState(false);
 
     const observer = useRef();
