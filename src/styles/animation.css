@@ -300,6 +300,10 @@ body {
     position: relative;
 }
 
+#parent_element.selectContainer {
+    position: relative;
+}
+
 /* Path Select */
 .pathSelect {
     font-weight: 600;

@@ -116,12 +116,12 @@ function PathSection() {
     return (
         <div id="parent_element" className="grid gap-x-48 grid-cols-2 h-screen bg-transparent">
             <div className="animationContainer absolute flex flex-col gap-y-10 h-full w-full pointer-events-none"></div>
-            <div className="hide justify-self-end self-center">
+            <div className="selectContainer hide justify-self-end self-center">
                 <button id="projectSelect" className="pathSelect">
                     /projects
                 </button>
             </div>
-            <div className="hide justify-self-start self-center">
+            <div className="selectContainer hide justify-self-start self-center">
                 <button id="gallerySelect" className="pathSelect">
                     /gallery
                 </button>
