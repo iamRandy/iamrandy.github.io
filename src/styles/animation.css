@@ -296,6 +296,10 @@ body {
     text-transform: uppercase;
 }
 
+#parent_element {
+    position: relative;
+}
+
 /* Path Select */
 .pathSelect {
     font-weight: 600;
