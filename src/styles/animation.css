@@ -298,6 +298,7 @@ body {
 
 #parent_element {
     position: relative;
+    height: 100vh;
 }
 
 #parent_element.selectContainer {
@@ -310,6 +311,7 @@ body {
     font-size: large;
     color: white;
     width: 100%;
+    height: 100%;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     /* transform: translateY(80px); */
     /* opacity: 0; */
@@ -317,7 +319,7 @@ body {
     animation-timeline: view();
 }
 
-#projectSelect::before {
+.pathSelect::before {
     content: '';
     height: 3px;
     width: 100%;
@@ -329,11 +331,11 @@ body {
     left: 0;
 }
 
-#projectSelect:hover::before {
+.pathSelect:hover::before {
     transform: scaleX(1.1);
 }
 
-#projectSelect::after {
+.pathSelect::after {
     content: '';
     height: 100%;
     width: 100%;
@@ -347,36 +349,6 @@ body {
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-
-#gallerySelect::before {
-    content: '';
-    height: 3px;
-    width: 100%;
-    position: absolute;
-    background-color: white;
-    transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: scaleX(0);
-    bottom: 0;
-    left: 0;
-}
-
-#gallerySelect:hover::before {
-    transform: scaleX(1.1);
-}
-
-#gallerySelect::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-color: white;
-    filter: blur(40px);
-    opacity: 0.5;
-    bottom: 0;
-    left: 0;
-    animation: breath 5s infinite;
-    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
 
 .animcomponent {
     height: 5px;
