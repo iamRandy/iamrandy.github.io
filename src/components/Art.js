@@ -10,6 +10,7 @@ function Art () {
         const overlayContainer = document.getElementById("overlayContainer");
         if (overlayContainer) {
             overlayContainer.style.display = "none";
+            document.body.style.overflow = "visible";
         }
     };
 
@@ -41,6 +42,7 @@ function Art () {
     
                 if (classes.includes("threebox")) {
                     const style = window.getComputedStyle(e.target);
+                    const curY = window.scrollY;
                     const backgroundImage = style.backgroundImage;
                     if (!classes.includes("selected")) {
                         const prev = document.querySelector(".selected");
@@ -48,8 +50,9 @@ function Art () {
                             prev.classList.remove("selected");
                         }
                         e.target.classList.add("selected");
+                        document.body.style.overflow = "hidden";
                         overlay.style.backgroundImage = backgroundImage;
-                        overlayContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                        overlayContainer.style.transform = `rotateX(0deg) rotateY(0deg) translateY(calc(${curY}px - 150vh))`;
                     } else {
                         overlay.style.backgroundImage = backgroundImage;
                         overlayContainer.style.display = "flex";

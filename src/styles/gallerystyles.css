@@ -1,4 +1,5 @@
 .banner {
+    position: relative;
     height: 100%;
     width: 100vw;
     margin-bottom: 30px;
@@ -33,13 +34,17 @@
 }
 
 .overlayContainer {
-    position: absolute;
+    position: fixed;
     display: flex;
     z-index: 10;
     justify-content: end;
     background-color: rgba(0, 0, 0, 0.5);
     height: 90vh;
     width: 100%;
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0;
 }
 
 .overlay {
@@ -53,7 +58,6 @@
 
 .overlayContainer::before {
     /* z-index: 10; */
-    content: "some description";
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
     font-size: 20px;
