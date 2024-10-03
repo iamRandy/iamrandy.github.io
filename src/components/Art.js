@@ -110,11 +110,29 @@ function Art () {
                     <div className="caption" data-caption="'Scattered Lions'"></div>
                 </div>
             </div>
-
             <div id="outro">
                 <p>Pretty cool stuff huh?</p>
                 <p>You can find more of my work on my instagram @<a target="_blank" rel="noreferrer" href="https://www.instagram.com/w1ckd_/"><b>w1ckd_</b></a></p>
             </div>
+            {/* <div id="row3" className="row">
+                <div id="box5" className="largebox threebox">
+                    <div className="caption" data-caption="'Scattered Lions'"></div>
+                </div>
+                <div id="box4" className="threebox">
+                    <div className="caption" data-caption="I drew my friend's character"></div>
+                </div>
+            </div>
+            <div id="row4" className="row">
+                <div id="box1" className="threebox">
+                    <div className="caption" data-caption="VSAM Gotta Catch em' All Event Graphic"></div>
+                </div>
+                <div id="box2" className="threebox">
+                    <div className="caption"  data-caption="My character, 'Kaze'"></div>
+                </div>
+                <div id="box3" className="threebox">
+                    <div className="caption" data-caption="My character, 'Lenny'"></div>
+                </div>
+            </div> */}
         
         </div>
     );
