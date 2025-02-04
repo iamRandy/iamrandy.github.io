@@ -1,5 +1,5 @@
 import LinkButton from './components/Links.js';
-import profile from './imgs/me.png';
+import profile from './imgs/Potential2.jpg';
 import PathSection from './components/PathSection.js';
 import Project from './components/Project.js';
 import Art from './components/Art.js';
@@ -140,9 +140,10 @@ function App() {
           
           <LinkButton onButtonClick={handleButtonClick} />
 
-          <div id="profileContainer" className="absolute top-10 right-40">
-            <img id="pfp" src={profile} alt="pfp" className="relative" />
+          <div className="absolute sm:bottom-80 sm:left-96 bottom-80 left-1/3">
+            <img id="pfp" src={profile} alt="pfp" className="sm:h-1/3 sm:w-1/3 w-2/4 h-2/4 rounded-xl" />
           </div>
+
           <div id="profile_description_container">
             <div id="profile_description_text" className="profile_description_text">
               <p>An artist and a developer, learning everywhere he goes. He strives to utilize his skills to bring smiles to people’s faces every day :)</p>

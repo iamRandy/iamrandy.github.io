@@ -6,7 +6,12 @@ module.exports = {
     extend: {
       height: {
         '128': '32rem',
-      }
+      },
+      bottom: {
+        '1/5': '20%',
+        '2/5': '40%',
+        '3/5': '60%',
+      },
     },
   },
   variants: {

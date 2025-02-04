@@ -28,7 +28,7 @@ body {
     padding: 20px 10px 10px 10px;
     border-radius: 7px;
     top: 60vh;
-    right: 20%;
+    right: 30%;
     width: 30%;
     min-width: 150px;
     transition: all 1s ease-in-out;
@@ -157,16 +157,10 @@ body {
     position: absolute;
     font-weight: bolder;
     top: -35px;
-    left: 10px;
+    right: 40px;
 }
 
 @media (max-width: 700px) {
-    #pfp {
-        width: 100%;
-        height: auto;
-        bottom: -180px;
-        left: 20vw;
-    }
 
     #header {
         background-image: url('../imgs/Scattered.png');
@@ -195,7 +189,7 @@ body {
         position: absolute;
         font-weight: bolder;
         top: -30px;
-        left: 10px;
+        right: 10px;
     }
 
 }
