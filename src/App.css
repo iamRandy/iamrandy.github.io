@@ -1,8 +1,37 @@
-#projectTit {
-    font-size: 3em;
-    font-weight: bolder;
+@keyframes BounceVertical {
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(1rem);
+    }
+}
+@keyframes FadeIn {
+    0% {
+        transform: translateX(-50%) translateY(2rem);
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.divider {
-    border-top: 3px solid #DDD;
+.nav-button::before {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    /* background-color: black; */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-.5rem);
+    width: 3rem;
+    height: 3rem;
+    background-image: url('/public/pngs/selectarrow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: opacity 1s linear, transform 0.2s linear;
+}
+
+.nav-button:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(.5rem);
+    animation: 2s BounceVertical infinite, .2s FadeIn linear;
 }
